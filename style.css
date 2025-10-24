@@ -176,7 +176,7 @@ button:hover {
 /* Large screens */
 @media (min-width: 1024px) {
   .container {
-    max-width: 480px;
+    max-width: 800px;
   }
 }
 
@@ -238,3 +238,4 @@ button:hover {
   .page-3 .signup-form input { font-size: 12px; }
   .page-3 .btn { font-size: 0.9rem; }
 }
+
