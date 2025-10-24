@@ -66,7 +66,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
   const choice = localStorage.getItem('communityUpdates');
   if (choice) {
     console.log(`User selected: ${choice}`);
-    window.location.href = 'page8.html'; // or your next page
+    window.location.href = 'page8.html'; 
   } else {
     alert('Please select Yes or No before proceeding.');
   }
@@ -77,5 +77,6 @@ function highlightSelection(selectedId) {
   document.getElementById('noBtn').classList.remove('selected');
   document.getElementById(selectedId).classList.add('selected');
 }
+
 
 
