@@ -1,0 +1,548 @@
+
+/* =========================
+   PAGE 3 STYLES
+========================= */
+.page-3 .app-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 15px 0;
+}
+
+.page-3 .tagline {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.page-3 .signup-form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.page-3 .btn {
+  background-color: #2b5eff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.page-3 .btn:hover {
+  background-color: #234dcc;
+}
+
+.page-3 .login-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* =========================
+   PAGE 3 STYLES
+========================= */
+
+.page-4 .app-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 15px 0;
+}
+
+.page-4 .tagline {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.page-4 .signin-form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.page-4 .btn {
+  background-color: #2b5eff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.page-4 .btn:hover {
+  background-color: #234dcc;
+}
+
+.page-4 .login-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* =========================
+   PAGE 5 STYLES
+========================= */
+
+.page-5 .container {
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.page-5 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 40px;
+}
+
+.page-5 .back-arrow {
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+
+.page-5 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+
+.page-5 h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.page-5 .group-icon {
+  text-align: center;
+  margin: 20px 0;
+}
+.page-5 .back-arrow i {
+  font-size: 24px;
+  color: #333; 
+}
+
+.page-5 .group-icon i {
+  font-size: 40px;
+  color: #007bff; 
+}
+
+.page-5 label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.page-5 select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 200px; 
+}
+
+
+.page-5 button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.page-5 button a {
+  color: white;
+  text-decoration: none;
+}
+
+.page-5 button:hover {
+  background-color: #0056b3;
+}
+
+/* =========================
+   PAGE 6 STYLES
+========================= */
+
+.page-6 .container {
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.page-6 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 40px;
+}
+
+.page-6 .back-arrow {
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+
+.page-6 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+
+.page-6 h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.page-6 .group-icon {
+  text-align: center;
+  margin: 20px 0;
+}
+.page-6 .back-arrow i {
+  font-size: 24px;
+  color: #333; 
+}
+
+.page-6 .group-icon i {
+  font-size: 40px;
+  color: #007bff; 
+}
+
+.page-6 label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.page-6 select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 200px; 
+}
+
+
+.page-6 button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.page-6 button a {
+  color: white;
+  text-decoration: none;
+}
+
+.page-6 button:hover {
+  background-color: #0056b3;
+
+}/* =========================
+   PAGE 7 STYLES
+========================= */
+
+.page-7 .container {
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.page-7 .header {
+  position: relative;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.page-7 .back-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+.page-7 .back-arrow i {
+  font-size: 24px;
+  color: #333;
+}
+
+.page-7 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+
+.page-7 h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.page-7 .group-icon {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.page-7 .group-icon i {
+  font-size: 40px;
+  color: #007bff;
+}
+
+.page-7 .question {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page-7 .choice-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  box-shadow: #333;
+  
+}
+.page-7 .choice-buttons .choice.yes a{
+    color: white;
+  text-decoration: none;}
+  .page-7 .choice-buttons .choice.no a{
+  text-decoration: none;
+ color: black;
+}
+
+.page-7 .choice {
+  width: 45%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+
+.page-7 .choice.yes {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.page-7 .choice.no {
+  background-color: white;
+  color: #333;
+}
+
+.page-7 .choice:hover {
+  opacity: 0.9;
+}
+.page-7 .choice.selected {
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+/* =========================
+   PAGE 8 STYLES
+========================= */
+.page-8 .header {
+  position: relative;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.page-8 .back-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+.page-8 .back-arrow i {
+  font-size: 24px;
+  color: #333;
+}
+
+.page-8 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+
+.page-8 h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.page-8 .profile-icon {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.page-8 .profile-icon i {
+  font-size: 50px;
+  color: #007bff;
+}
+
+.page-8 form {
+  text-align: left;
+}
+
+.page-8 label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.page-8 input,
+.page-8 textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.page-8 textarea::placeholder {
+  font-style: italic;
+  color: #999;
+}
+
+.page-8 .next {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.page-8 .next:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 40px 15px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Page 1 */
+  .page-1 h1 { font-size: 1.3rem; }
+  .page-1 p { font-size: 0.9rem; }
+  .page-1 button { font-size: 0.95rem; }
+
+  /* Page 2 */
+  .page-2 h1 { font-size: 1.3rem; }
+  .page-2 h2 { font-size: 0.95rem; }
+  .page-2 .feature { font-size: 0.9rem; }
+  .page-2 button { font-size: 0.95rem; }
+
+  /* Page 3 */
+  .page-3 .app-title { font-size: 1.3rem; }
+  .page-3 .tagline { font-size: 0.9rem; }
+  .page-3 .signup-form input { font-size: 13px; }
+  .page-3 .btn { font-size: 0.95rem; }
+   .page-5 h2 { font-size: 1.3rem; }
+  .page-5 .group-icon i { font-size: 36px; }
+  .page-5 button { font-size: 0.95rem; }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 35px 15px;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* Page 1 */
+  .page-1 h1 { font-size: 1.2rem; }
+  .page-1 p { font-size: 0.85rem; }
+  .page-1 button { font-size: 0.9rem; }
+
+  /* Page 2 */
+  .page-2 h1 { font-size: 1.2rem; }
+  .page-2 h2 { font-size: 0.9rem; }
+  .page-2 .feature { font-size: 0.85rem; }
+  .page-2 button { font-size: 0.9rem; }
+
+  /* Page 3 */
+  .page-3 .app-title { font-size: 1.2rem; }
+  .page-3 .tagline { font-size: 0.85rem; }
+  .page-3 .signup-form input { font-size: 12px; }
+  .page-3 .btn { font-size: 0.9rem; }
+
+
+.page-5 h2 { font-size: 1.2rem; }
+.page-5 .group-icon i { font-size: 32px; }
+.page-5 button { font-size: 0.9rem; }
+}

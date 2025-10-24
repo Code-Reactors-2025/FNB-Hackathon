@@ -1,0 +1,128 @@
+
+
+/* =========================
+   PAGE 7 STYLES
+========================= */
+
+.page-7 .container {
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.page-7 .header {
+  position: relative;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.page-7 .back-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+.page-7 .back-arrow i {
+  font-size: 24px;
+  color: #333;
+}
+
+.page-7 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+
+.page-7 h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.page-7 .group-icon {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.page-7 .group-icon i {
+  font-size: 40px;
+  color: #007bff;
+}
+
+.page-7 .question {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page-7 .choice-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  box-shadow: #333;
+  
+}
+.page-7 .choice-buttons .choice.yes a{
+    color: white;
+  text-decoration: none;}
+  .page-7 .choice-buttons .choice.no a{
+  text-decoration: none;
+ color: black;
+}
+
+.page-7 .choice {
+  width: 45%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+
+.page-7 .choice.yes {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.page-7 .choice.no {
+  background-color: white;
+  color: #333;
+}
+
+.page-7 .choice:hover {
+  opacity: 0.9;
+}
+.page-7 .choice.selected {
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+
+
+
+
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+
+/* Large screens */
+@media (min-width: 1024px) {
+  
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  
+}

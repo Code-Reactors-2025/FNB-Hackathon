@@ -1,0 +1,116 @@
+
+
+/* =========================
+   PAGE 6 STYLES
+========================= */
+
+.page-6 .container {
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.page-6 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 40px;
+}
+
+.page-6 .back-arrow {
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+
+.page-6 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+
+.page-6 h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.page-6 .group-icon {
+  text-align: center;
+  margin: 20px 0;
+}
+.page-6 .back-arrow i {
+  font-size: 24px;
+  color: #333; 
+}
+
+.page-6 .group-icon i {
+  font-size: 40px;
+  color: #007bff; 
+}
+
+.page-6 label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.page-6 select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 200px; 
+}
+
+
+.page-6 button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.page-6 button a {
+  color: white;
+  text-decoration: none;
+}
+
+.page-6 button:hover {
+  background-color: #0056b3;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+
+/* Large screens */
+@media (min-width: 1024px) {
+ 
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+  
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  
+}

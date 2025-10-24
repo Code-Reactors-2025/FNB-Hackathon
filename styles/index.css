@@ -1,0 +1,64 @@
+
+
+/* =========================
+   PAGE 1 STYLES
+========================= */
+.page-1 h1 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.page-1 p {
+  font-style: italic;
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.page-1 button {
+  background-color: #111;
+  color: white;
+}
+
+.page-1 button:hover {
+  background-color: #333;
+}
+
+
+
+
+
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+
+/* Large screens */
+@media (min-width: 1024px) {
+ 
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+ 
+
+  /* Page 1 */
+  .page-1 h1 { font-size: 1.3rem; }
+  .page-1 p { font-size: 0.9rem; }
+  .page-1 button { font-size: 0.95rem; }
+
+  
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+
+
+  /* Page 1 */
+  .page-1 h1 { font-size: 1.2rem; }
+  .page-1 p { font-size: 0.85rem; }
+  .page-1 button { font-size: 0.9rem; }
+
+
+}
