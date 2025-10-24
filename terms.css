@@ -1,0 +1,60 @@
+.terms-page .terms-content {
+  background: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  color: #333;
+  flex-grow: 1;
+}
+
+.terms-page .terms-content h2 {
+  color: #2575fc;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.terms-page .terms-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.terms-page .terms-content ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+.terms-page .logo-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin-left: 267px;
+ 
+}
+.terms-page .back-arrow {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.terms-page .back-arrow i {
+  font-size: 24px;
+  color: #00050e;
+  cursor: pointer;
+}
+
+.terms-page .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 40px;
+}
+.terms-page .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
