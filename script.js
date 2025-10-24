@@ -14,6 +14,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 
   if (name && email) {
     alert(`Welcome, ${name}! Your account has been created.`);
-    window.location.href = "page4.html";
+    window.location.href = "page5.html";
   }
 });
+
