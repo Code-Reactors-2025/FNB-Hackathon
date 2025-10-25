@@ -1,8 +1,7 @@
 import { supabase } from "./utils/supabaseClient.js";
-import { signedIn } from "./utils/signedIn.js";
 
 
-const userExists = localStorage.getItem("userExists");
+const existingUser = localStorage.getItem("userExists");
 
 async function userExists() {
   const { data: { session }, error: sessionError } = await supabase.auth.getSession();
@@ -35,7 +34,7 @@ async function userExists() {
 
 
 
-if (userExists === "true") {
+if (existingUser === "true") {
   userExists();
 } 
 
