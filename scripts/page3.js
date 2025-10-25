@@ -72,7 +72,9 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
   if (error) {
   if (error.message.includes("User already registered")) {
     alert("You already have an account. Please log in instead.");
-  } 
+  } else {
+    alert("Sign up failed: " + error.message);
+  }
   return;
 }
 
@@ -88,7 +90,7 @@ signUpForm.reset();
     
   } catch (err) {
     console.error(err);
-    alert("Sign-up failed. Check console for details.")
+    // alert("Sign-up failed. Check console for details.")
   }
 
   
