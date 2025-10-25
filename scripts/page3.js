@@ -82,12 +82,10 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
 if (!data.user) {
   // alert("You already have an account. Please log in instead.");
   return;
-} else {
-  alert("Sign-up successful! Please check your email for confirmation.");
-}
+} 
 
 // Otherwise, success
-
+alert("Sign-up successful! Please check your email for confirmation.");
 signUpForm.reset();
     
   } catch (err) {
