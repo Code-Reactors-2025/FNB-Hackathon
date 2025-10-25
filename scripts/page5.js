@@ -15,7 +15,7 @@ document.getElementById('community-form').addEventListener('submit', function(e)
 
 // Initialize Supabase client
 const supabaseUrl = 'https://fvvjlaedmftclupcaeph.supabase.co';
-const supabaseKey = 'YOUR_PUBLIC_ANON_KEY'; // never use service role here
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2dmpsYWVkbWZ0Y2x1cGNhZXBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEzMzU5NjIsImV4cCI6MjA3NjkxMTk2Mn0.Hxdw3BXV3DNoYUt0fY6gXdL4q-o4XnMLb7ACT4R5utQ'; // never use service role here
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 
