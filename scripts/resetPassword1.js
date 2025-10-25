@@ -3,7 +3,7 @@ import { supabase } from "./utils/supabaseClient.js";
 const confirmEmail = document.getElementById("confirmEmail");
 
 confirmEmail?.addEventListener("click", async () => {
-  const email = document.getElementById("resetEmail").value.trim();
+  const email = document.getElementById("emailResetPassword").value.trim();
   if (!email) return alert("Please enter your email.");
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
