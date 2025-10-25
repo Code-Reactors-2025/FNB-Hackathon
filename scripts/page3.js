@@ -80,7 +80,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
 
 // Extra check: if no user object is returned, treat as already registered
 if (!data.user) {
-  alert("You already have an account. Please log in instead.");
+  // alert("You already have an account. Please log in instead.");
   return;
 }
 
