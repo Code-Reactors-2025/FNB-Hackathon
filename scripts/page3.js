@@ -20,7 +20,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
   const lastname = document.getElementById('lastname').value.trim();
   const emailSignUp = document.getElementById('emailSignUp').value.trim();
   const phone = document.getElementById('phone').value.trim();
-  const passwordSignUp = document.getElementById('passwordSignUp');
+  const passwordSignUp = document.getElementById('passwordSignUp').value;
 
   if (!isValidPassword(passwordSignUp)) {
     alert(
@@ -83,4 +83,5 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     alert("Sign-up failed. Check console for details.")
   }
 });
+
 
