@@ -72,9 +72,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
   if (error) {
   if (error.message.includes("User already registered")) {
     alert("You already have an account. Please log in instead.");
-  } else {
-    alert("Sign up failed: " + error.message);
-  }
+  } 
   return;
 }
 
