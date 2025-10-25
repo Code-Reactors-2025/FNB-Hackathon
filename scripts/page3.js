@@ -70,18 +70,23 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     });
 
   if (error) {
-    if (error.message.includes("User already registered")) {
-      alert("You already have an account. Please log in instead.");
-    } else {
-      alert("Sign up failed: " + error.message);
-    }
-    return;
+  if (error.message.includes("User already registered")) {
+    alert("You already have an account. Please log in instead.");
   } else {
-    alert("Sign-up successful! Please check your email for confirmation.");
+    alert("Sign up failed: " + error.message);
   }
+  return;
+}
 
-    
-    signUpForm.reset();
+// Extra check: if no user object is returned, treat as already registered
+if (!data.user) {
+  alert("You already have an account. Please log in instead.");
+  return;
+}
+
+// Otherwise, success
+alert("Sign-up successful! Please check your email for confirmation.");
+signUpForm.reset();
     
   } catch (err) {
     console.error(err);
