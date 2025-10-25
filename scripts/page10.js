@@ -1,4 +1,15 @@
-            const yesBtn = document.getElementById('yesBtn');
+import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return; // redirected if not logged in
+  
+  console.log("Welcome, ", user.currentUser.email);
+})();
+
+
+const yesBtn = document.getElementById('yesBtn');
     const noBtn = document.getElementById('noBtn');
     const extraOptions = document.getElementById('extraOptions');
     const next2 = document.getElementById('next2');

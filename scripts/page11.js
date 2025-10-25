@@ -1,3 +1,14 @@
+import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return; // redirected if not logged in
+  
+  console.log("Welcome, ", user.currentUser.email);
+})();
+
+
 // ==================== DASHBOARD SCRIPT ====================
 
 // Grab elements

@@ -1,3 +1,14 @@
+import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return; // redirected if not logged in
+  
+  console.log("Welcome, ", user.currentUser.email);
+})();
+
+
 /*================ page 7 ============*/
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');

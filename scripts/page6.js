@@ -1,4 +1,14 @@
 import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return; // redirected if not logged in
+  
+  console.log("Welcome, ", user.currentUser.email);
+})();
+
+
 
 
 document.getElementById('group-form').addEventListener('submit', function(e) {
@@ -16,18 +26,3 @@ document.getElementById('group-form').addEventListener('submit', function(e) {
 
 
 
-// Handle Sign Out
-
-const signOutBtn = document.getElementById("logout");
-
-signOutBtn.addEventListener("click", async () => {
-  const { error } = await supabase.auth.signOut();
-
-  if (error) {
-    console.error("Error signing out:", error.message);
-    alert("Error signing out. Please try again.")
-  } else {
-    alert("Signed out successfully!");
-    window.location.href = "https://code-reactors-2025.github.io/FNB-Hackathon/page4.html"
-  }
-})
