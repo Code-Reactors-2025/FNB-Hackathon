@@ -11,6 +11,31 @@ function isValidPassword(password) {
   return regex.test(password);
 }
 
+async function checkEmail(email) {
+  // 🔍 Step 1: Check if email exists
+  const { data: existing, error: selectError } = await supabaseClient
+    .from('user_emails')
+    .select('*')
+    .eq('email', email)
+    .maybeSingle();
+
+  if (selectError) {
+    console.error('Error checking email:', selectError.message);
+    alert('Error checking email');
+    return false;
+  }
+
+  if (existing) {
+    alert('This email is already registered. Please sign in.');
+    return false; // stop here
+  }
+}
+
+
+const emailSignUp = document.getElementById('emailSignUp').value.trim();
+localStorage.setItem("signUpEmail", emailSignUp);
+
+
 
 // Sign-Up Handler
 document.getElementById('signUpForm').addEventListener('submit', async (e) => {
@@ -29,31 +54,9 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     return;
   }
 
-  // --- START: Silent email check ---
-  try {
-    const { error } = await supabaseClient.auth.signInWithPassword({
-      email: emailSignUp,
-      password: "dummyPassword123!",
-    });
+  const notOk = await checkEmail(emailSignUp);
 
-    if (!error) {
-      // Somehow signed in with dummy password? User exists
-      alert("You already have an account. Please log in instead.");
-      return;
-    }
-
-    if (error.message.includes("Invalid login credentials")) {
-      // Email exists, wrong password
-      alert("You already have an account. Please log in instead.");
-      return;
-    }
-
-    // If error.message says "User not found", we can safely continue
-  } catch (err) {
-    console.error("Error checking email:", err);
-    // Optionally allow sign-up to continue anyway
-  }
-  // --- END: Silent email check ---
+  if (notOk) return;
 
   try {
     const { error } = await supabaseClient.auth.signUp({
@@ -76,12 +79,12 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
 
     alert("Sign-up successful! Please check your email for confirmation.");
     signUpForm.reset();
-    signUpForm.style.display = "none";
-    signInForm.style.display = "flex";
+    
   } catch (err) {
     console.error(err);
     alert("Sign-up failed. Check console for details.")
   }
-});
 
+  
+});
 
