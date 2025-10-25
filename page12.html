@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles/shared.css" />
+  <link rel="stylesheet" href="styles/page12.css" />
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- JavaScript -->
+  <script src="scripts/page12.js" defer></script>
+
+  <!-- Google Font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+  </style>
+</head>
+<body class="page-12">
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="profile-header">
+      <a href="page11.html" class="back-btn"><i class='bx bx-arrow-back'></i></a>
+      <h2>Profile</h2>
+      <i class='bx bx-bell'></i>
+    </header>
+
+    <!-- PROFILE INFO -->
+    <section class="profile-info">
+          </span>
+    <a href="page8.html">
+      <img src="https://i.pravatar.cc/150?img=3" alt="Profile" class="profile-pic" />
+    </a>
+      <h3 class="profile-name">Brittany Dinan</h3>
+
+      <div class="profile-details">
+        <p><strong>Email</strong><br><span>email@email.com</span></p>
+        <p><strong>Phone</strong><br><span>(+123) 000 111 222 333</span></p>
+        <p><strong>Location</strong><br><span>New York, USA</span></p>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="settings-section">
+      <div class="setting-item">
+        <i class='bx bx-user'></i><span>Account settings</span>
+      </div>
+
+      <div class="setting-item toggle">
+        <i class='bx bx-save'></i><span>Save data to device</span>
+        <label class="switch">
+          <input type="checkbox" id="saveData">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item toggle">
+        <i class='bx bx-map'></i><span>Allow location</span>
+        <label class="switch">
+          <input type="checkbox" id="allowLocation">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item toggle">
+        <i class='bx bx-face'></i><span>Face ID</span>
+        <label class="switch">
+          <input type="checkbox" id="faceID">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item toggle">
+        <i class='bx bx-moon'></i><span>Dark mode</span>
+        <label class="switch">
+          <input type="checkbox" id="darkMode">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <button class="logout-btn">Log out</button>
+  </div>
+</body>
+</html>
