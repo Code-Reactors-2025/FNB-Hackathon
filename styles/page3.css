@@ -14,14 +14,37 @@
   margin-bottom: 20px;
 }
 
-.page-3 .signup-form input {
+.page-3 {
   width: 90%;
   padding: 12px;
-  margin: 10px 0;
+  margin: 10px auto;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.signup-form input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 1em;
+  margin: .5em 0 1em;
+  border-radius: .25em;
+}
+
+label.required::after {
+  content: " *";
+  color: red;
+}
+
+.signup-form button {
+  align-self: center;
+}
+
 
 .page-3 .btn {
   background-color: #2b5eff;
@@ -42,6 +65,21 @@
 .page-3 .login-text {
   margin-top: 15px;
   font-size: 14px;
+}
+
+
+#terms {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+  background-color: lightblue;
+  padding: 1em;
+}
+
+#terms input {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
 }
 
 

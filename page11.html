@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Dashboard</title>
+  <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/page11.css">
+  <script src="scripts/page11.js" defer></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+  </style>
+</head>
+<body class="page-11">
+    <div class="container">
+
+  <!-- ======== NAVBAR ======== -->
+  <header class="top-bar">
+    <div class="nav-left">
+      <i class='bx bx-menu'></i>
+      <span class="logo-text">My Dashboard</span>
+    </div>
+    <div class="nav-right">
+      <img src="images/profile.jpg" alt="Profile" class="profile-pic">
+    </div>
+  </header>
+
+  <!-- ======== SEARCH BAR ======== -->
+  <div class="search-container">
+    <i class='bx bx-search'></i>
+    <input type="text" id="searchInput" placeholder="Search dashboard...">
+  </div>
+
+  <!-- ======== BENTO GRID ======== -->
+  <main class="bento-grid" id="bentoGrid">
+    <div class="grid-item category">
+      <h3>News</h3>
+      <p>Stay updated with latest news.</p>
+      <button class="delete-btn"><i class='bx bx-trash'></i></button>
+    </div>
+    <div class="grid-item category">
+      <h3>Weather</h3>
+      <p>Sunny 25°C in Cape Town.</p>
+      <button class="delete-btn"><i class='bx bx-trash'></i></button>
+    </div>
+    <div class="grid-item add-tile" id="addTile">
+      <i class='bx bx-plus'></i>
+      <p>Add new section</p>
+    </div>
+  </main>
+
+    <!-- ======== BOTTOM NAV ======== -->
+  <nav class="bottom-nav">
+    <a href="#" class="nav-link active"><i class='bx bx-home'></i><span>Home</span></a>
+    <a href="#" class="nav-link"><i class='bx bx-search-alt-2'></i><span>Search</span></a>
+    <a href="#" class="nav-link"><i class='bx bx-cog'></i><span>Settings</span></a>
+    </nav>
+  </div>
+</body>
+</html>

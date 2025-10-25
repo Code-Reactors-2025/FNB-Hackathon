@@ -9,7 +9,8 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
 }
 .page-7 .header {
   position: relative;
@@ -65,7 +66,8 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 40px;
-  box-shadow: #333;
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
   
 }
 .page-7 .choice-buttons .choice.yes a{
@@ -82,7 +84,7 @@
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 2.5px solid #ccc;
   transition: 0.3s ease;
 }
 

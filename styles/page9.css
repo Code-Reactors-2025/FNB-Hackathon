@@ -1,0 +1,122 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: #f5f5f5;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+.page-9 .container {
+text-align: center;
+background: #fff;
+border-radius: 20px;
+padding: 50px 20px;
+width: 100%;
+box-shadow: 0 0 15px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+}
+
+.page-9 .logo {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+margin: 0 auto 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #000;
+overflow: hidden;
+}
+
+.page-9 logo img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.page-9 button {
+border: none;
+padding: 14px 0;
+border-radius: 8px;
+font-size: 1rem;
+cursor: pointer;
+transition: 0.3s ease;
+width: 100%;
+max-width: 300px;
+
+}
+
+.page-9 button:hover {
+opacity: 0.9;
+}
+
+.page-9 h2 {
+font-size: 1.4rem;
+margin-bottom: 15px;
+}
+
+.page-9 p {
+color: #555;
+margin-bottom: 20px;
+}
+
+.page-9 .checkbox-group {
+text-align: left;
+margin-bottom: 25px;
+}
+
+.page-9 label {
+display: block;
+margin: 10px 0;
+font-size: 1rem;
+}
+
+.page-9 input[type="checkbox"] {
+margin-right: 10px;
+transform: scale(1.2);
+cursor: pointer;
+}
+
+.page-9 .next-btn {
+background-color: #0056b3;
+color: #fff;
+opacity: 0.6;
+}
+
+.page-9 .next-btn.active {
+opacity: 1;
+}
+.page-9 .header {
+  position: relative;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.page-9 .back-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+.page-9 .back-arrow i {
+  font-size: 24px;
+  color: #333;
+}
+
+.page-9 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}

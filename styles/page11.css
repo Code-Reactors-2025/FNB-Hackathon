@@ -1,0 +1,182 @@
+/* ==================== GLOBAL STYLES ==================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== TOP BAR ==================== */
+.page-11 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+age-11 .page-11 .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-11 .nav-left i {
+  font-size: 24px;
+  color: #2575fc;
+  cursor: pointer;
+}
+
+.page-11 .logo-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.page-11 .nav-right .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2575fc;
+}
+
+/* ==================== SEARCH BAR ==================== */
+.page-11 .search-container {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin: 15px auto;
+  padding: 8px 15px;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.page-11 .search-container i {
+  color: #888;
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.page-11 .search-container input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* ==================== BENTO GRID ==================== */
+.page-11 .bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.page-11 .grid-item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.page-11 .grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.page-11 .grid-item h3 {
+  margin: 0 0 5px;
+  color: #2575fc;
+}
+
+.page-11 .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #999;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.page-11 .delete-btn:hover {
+  color: #ff4444;
+}
+
+/* ==================== ADD TILE ==================== */
+.page-11 .add-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px dashed #2575fc;
+  background: #f0f6ff;
+}
+
+.page-11 .add-tile i {
+  font-size: 32px;
+  color: #2575fc;
+  margin-bottom: 5px;
+}
+
+/* ==================== BOTTOM NAV ==================== */
+.page-11 .bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 10px 0;
+  position: sticky; /* changed from fixed */
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  z-index: 50;
+}
+
+
+
+.page-11 .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #777;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+
+.page-11 .nav-link i {
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+
+.page-11 .nav-link.active,
+.page-11 .nav-link:hover {
+  color: #2575fc;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+  .grid-item {
+    padding: 15px;
+  }
+  .top-bar {
+    padding: 8px 15px;
+  }
+}
