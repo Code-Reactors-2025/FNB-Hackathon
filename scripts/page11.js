@@ -1,334 +1,75 @@
-/* ==================== GLOBAL STYLES ==================== */
-body.page-11 {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #333;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-/* === Color Variations for Bento Tiles === */
-.page-11 .color-1 { background: #2837c0; } 
-.page-11 .color-2 { background: #3a9a2b; } 
-.page-11 .color-3 { background: #dbd33e; } 
-.page-11 .color-4 { background: #3babc7; } 
-.page-11 .color-5 { background: #df28bd; } 
+// ==================== DASHBOARD SCRIPT ====================
 
+// Grab elements
+const bentoGrid = document.getElementById('bentoGrid');
+const addTile = document.getElementById('addTile');
+const menuToggle = document.getElementById('menuToggle');
+const sideNav = document.getElementById('sideNav');
+const container = document.querySelector('.container');
 
-.page-11 .color-1, 
-.page-11 .color-2, 
-.page-11 .color-3, 
-.page-11 .color-4, 
-.page-11 .color-5 {
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-}
+// Predefined sections to choose from
+const predefinedSections = [
+  { title: "Fitness Tracker", desc: "Monitor your daily workouts and steps." },
+  { title: "Finance", desc: "Keep track of your expenses and savings." },
+  { title: "Reminders", desc: "Set up alerts for upcoming events or tasks." },
+  { title: "Community Feed", desc: "See posts from nearby community members." },
+  { title: "Calendar", desc: "View upcoming events at a glance." }
+];
 
+// Color palette for new tiles
+const colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5'];
+let colorIndex = 0;
 
-/* ===== TOP BAR ===== */
-.page-11 .top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+// ==================== ADD TILE ====================
+addTile.addEventListener('click', () => {
+  const sectionTitles = predefinedSections.map((s, i) => `${i + 1}. ${s.title}`).join('\n');
+  const choice = prompt(`Select a section to add:\n${sectionTitles}`);
+  const index = parseInt(choice) - 1;
 
-.page-11 .nav-left i {
-  font-size: 24px;
-  color: #2575fc;
-  cursor: pointer;
-}
+  if (!isNaN(index) && predefinedSections[index]) {
+    const section = predefinedSections[index];
 
-.page-11 .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    const newItem = document.createElement('div');
+    newItem.classList.add('grid-item', 'category', colors[colorIndex]);
+    colorIndex = (colorIndex + 1) % colors.length;
 
-.page-11 .greeting {
-  font-size: 0.95rem;
-  color: #333;
-}
+    newItem.innerHTML = `
+      <div class="item-header">
+        <h3>${section.title}</h3>
+        <button class="delete-btn"><i class='bx bx-trash'></i></button>
+      </div>
+      <p>${section.desc}</p>
+    `;
 
-.page-11 .profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #2575fc;
-}
-
-/* ===== SIDEBAR NAV ===== */
-
-.page-11 .side-nav {
-  position: absolute; 
-  top: 0;            
-  width: max-content;
-  height: 100vh;
-  background: #fff;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  padding: 20px 10px;
-  display: none;
-  flex-direction: column;
-  z-index: 200; 
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 10px;
-  scrollbar-shadow-color: 0 6px 15px rgba(0,0,0,0.1);
-
-}
-
-.page-11 .side-nav.active {
-  display: flex;
-  transform: translateX(0);
-}
-
-.page-11 .side-links {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.page-11 .side-links button {
-   display: flex;               
-        justify-content: center;    
-        align-items: center;         
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-}
-
-.page-11 .side-links .nav-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #777;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.3s;
-  ;
-}
-
-.page-11 .side-links .nav-link i {
-  font-size: 20px;
-}
-
-.page-11 .side-links .nav-link.active,
-.page-11 .side-links .nav-link:hover {
-  color: #2575fc;
-}
-.page-11 .container.sidebar-open .bento-grid {
-  margin-left: 150px;
-  transition: margin 0.3s ease;
-}
-.page-11 .container.sidebar-close .bento-grid {
-  margin-right: 200px;
-  transition: margin 0.3s ease;
-}
-#sidebarClose {
-  font-size: 28px;        
-  color: #2575fc;        
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-#sidebarClose:hover {
-  color: #1a4db3;         /
-}
-
-/* ==================== SEARCH BAR ==================== */
-.page-11 .search-container {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  margin: 15px auto;
-  padding: 8px 15px;
-  border-radius: 30px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.page-11 .search-container i {
-  color: #888;
-  font-size: 20px;
-  margin-right: 8px;
-}
-
-.page-11 .search-container input {
-  border: none;
-  outline: none;
-  width: 100%;
-  font-size: 0.95rem;
-}
-
-/* ==================== BENTO GRID ==================== */
-/* ==================== BENTO TILE COLORS ==================== */
-.page-11 .color-1 {
-  background: #fef3c7; 
-}
-
-.page-11 .color-2 {
-  background: #dbeafe; 
-}
-
-.page-11 .color-3 {
-  background: #dcfce7; 
-}
-
-.page-11 .color-4 {
-  background: #fde2e2; 
-}
-
-.page-11 .color-5 {
-  background: #f3e8ff; 
-}
-
-.page-11 .bento-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 15px;
-  padding: 20px;
-  margin-bottom: calc(60px + 20px); 
-  flex-grow: 1;
-  justify-items: center;
-  align-items: start;
-  transition: margin-bottom 0.3s ease;
-}
-
-.page-11 .grid-item {
-  border-radius: 15px;
-  padding: 20px;
-  position: relative;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.page-11 .grid-item h3 {
-  margin: 0 0 5px;
-  color: #2575fc;
-}
-
-.page-11 .grid-item p {
-  flex-grow: 1;
-}
-
-.page-11 .grid-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* ==================== DELETE BUTTON ==================== */
-.page-11 .item-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.page-11 .item-header h3 {
-  margin: 0;
-  color: #2575fc;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.page-11 .delete-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  color: #999;
-  font-size: 18px;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.page-11 .delete-btn:hover {
-  color: #ff4444;
-}
-
-/* ==================== ADD TILE ==================== */
-.page-11 .add-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 2px dashed #2575fc;
-  background: #f0f6ff;
-  transition: 0.3s ease;
-}
-
-.page-11 .add-tile:hover {
-  background: #e3edff;
-}
-
-.page-11 .add-tile i {
-  font-size: 32px;
-  color: #2575fc;
-  margin-bottom: 5px;
-}
-
-/* ==================== BOTTOM NAV ==================== */
-.page-11 .container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  position: relative;
-}
-.page-11 main {
-  flex-grow: 1;
-  padding-left: 220px; 
-}
-
-.page-11 .bento-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 20px;
-  margin-bottom: 20px; 
-  flex-grow: 0;
-  justify-content: center;
-  align-items: start;
-  height: (auto-fit, minmax(150px, 1fr));
-}
-
-
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 900px) {
-  .page-11 .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+    bentoGrid.insertBefore(newItem, addTile);
+    attachDeleteHandler(newItem);
   }
+});
+
+// ==================== DELETE TILE ====================
+function attachDeleteHandler(item) {
+  const delBtn = item.querySelector('.delete-btn');
+  delBtn.addEventListener('click', () => item.remove());
 }
 
-@media (max-width: 600px) {
-  .page-11 .bento-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .page-11 .grid-item {
-    padding: 15px;
-  }
-  .page-11 .top-bar {
-    padding: 8px 15px;
-  }
-}
-@media (max-width: 600px) {
-  .page-11 .bottom-nav {
-    padding: 8px 0;
-  }
+// Attach delete handlers to initial tiles
+document.querySelectorAll('.category').forEach(attachDeleteHandler);
 
-  .page-11 .bento-grid {
-    margin-bottom: 70px; 
-  }
-}
+// ==================== SIDE NAV TOGGLE ====================
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const sidebarClose = document.getElementById('sidebarClose');
+  const sideNav = document.getElementById('sideNav');
+  const container = document.querySelector('.container');
+
+  menuToggle.addEventListener('click', () => {
+    sideNav.classList.add('active');
+    container.classList.add('sidebar-open');
+  });
+
+  sidebarClose.addEventListener('click', () => {
+    sideNav.classList.remove('active');
+    container.classList.remove('sidebar-open');
+  });
+});
 
