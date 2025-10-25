@@ -76,9 +76,11 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
       alert("Sign up failed: " + error.message);
     }
     return;
+  } else {
+    alert("Sign-up successful! Please check your email for confirmation.");
   }
 
-    alert("Sign-up successful! Please check your email for confirmation.");
+    
     signUpForm.reset();
     
   } catch (err) {
