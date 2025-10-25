@@ -18,36 +18,84 @@ const supabaseUrl = 'https://fvvjlaedmftclupcaeph.supabase.co';
 const supabaseKey = 'YOUR_PUBLIC_ANON_KEY'; // never use service role here
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
-async function registerEmailAfterVerification() {
-  // Step 1: Check if user is authenticated
-  const { data: { user }, error } = await supabaseClient.auth.getUser();
 
-  if (error || !user) {
-    console.warn("User not authenticated yet, waiting for verification...");
-    // Try again after a short delay (Supabase may take a second to load session)
-    setTimeout(registerEmailAfterVerification, 3000);
-    return;
-  }
 
-  // Step 2: Add email to table
-  const email = user.email;
+
+
+
+
+
+// verify.js
+const { data: { session }, error } = await supabaseClient.auth.getSessionFromUrl();
+
+if (error) {
+  console.error("Error signing in from verification link:", error.message);
+} else {
+  console.log("User signed in automatically!", session.user);
+
+  // Optional: insert their email into user_emails table
   const { error: insertError } = await supabaseClient
     .from('user_emails')
-    .insert([{ email }]);
+    .insert([{ email: session.user.email }]);
 
-  if (insertError) {
-    if (insertError.code === "23505") {
-      console.log("Email already exists — skipping insert.");
-    } else {
-      console.error("Insert failed:", insertError.message);
-    }
-    return;
-  }
+  if (insertError) console.error("Failed to insert email:", insertError.message);
 
-  console.log("✅ Email successfully registered:", email);
+  // Redirect to main home page
+  window.location.href = '/home.html';
 }
 
-registerEmailAfterVerification();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// async function registerEmailAfterVerification() {
+//   // Step 1: Check if user is authenticated
+//   const { data: { user }, error } = await supabaseClient.auth.getUser();
+
+//   if (error || !user) {
+//     console.warn("User not authenticated yet, waiting for verification...");
+//     // Try again after a short delay (Supabase may take a second to load session)
+//     setTimeout(registerEmailAfterVerification, 3000);
+//     return;
+//   }
+
+//   // Step 2: Add email to table
+//   const email = user.email;
+//   const { error: insertError } = await supabaseClient
+//     .from('user_emails')
+//     .insert([{ email }]);
+
+//   if (insertError) {
+//     if (insertError.code === "23505") {
+//       console.log("Email already exists — skipping insert.");
+//     } else {
+//       console.error("Insert failed:", insertError.message);
+//     }
+//     return;
+//   }
+
+//   console.log("✅ Email successfully registered:", email);
+// }
+
+// registerEmailAfterVerification();
 
 
 
