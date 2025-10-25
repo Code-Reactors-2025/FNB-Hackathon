@@ -60,7 +60,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
   if (notOk) return;
 
   try {
-    const { error } = await supabaseClient.auth.signUp({
+    const { data, error } = await supabaseClient.auth.signUp({
       email: emailSignUp,
       password: passwordSignUp,
       options: {
