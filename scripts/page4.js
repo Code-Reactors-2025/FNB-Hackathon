@@ -1,11 +1,29 @@
-document.getElementById('signinForm').addEventListener('submit', function(e) {
-  e.preventDefault(); 
+import { supabase } from "./utils/supabaseClient.js";
 
-  const name = document.getElementById('name').value;
-  const password = document.getElementById('password').value;
+const signInForm = document.getElementById("signInForm");
 
-  if (name && password) {
-    alert(`Welcome, ${name}! Your account has been signed in.`);
-    window.location.href = "page5.html";
+// Sign-In Handler
+signInForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const emailSignIn = document.getElementById("signInEmail").value.trim();
+  const passwordSignIn = document.getElementById("signInPassword").value;
+
+  try {
+    const { error } = await supabase.auth.signInWithPassword({
+      email: emailSignIn,
+      password: passwordSignIn,
+    });
+
+    if (error) {
+      alert(`Error: ${error.message}`);
+      return;
+    }
+
+    alert(`Sign-in successful! Welcome back.`);
+    window.location.href = "page11.html"
+  } catch (err) {
+    console.error(err);
+    alert("Sign-in failed. Check console for details.")
   }
-});
+})
