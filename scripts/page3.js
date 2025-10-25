@@ -11,8 +11,29 @@ function isValidPassword(password) {
   return regex.test(password);
 }
 
+// async function checkEmail(email) {
+//   // 🔍 Step 1: Check if email exists
+//   const { data: existing, error: selectError } = await supabaseClient
+//     .from('user_emails')
+//     .select('*')
+//     .eq('email', email)
+//     .maybeSingle();
+
+//   if (selectError) {
+//     console.error('Error checking email:', selectError.message);
+//     alert('Error checking email');
+//     return false;
+//   }
+
+//   if (existing) {
+//     alert('This email is already registered. Please sign in.');
+//     return false; // stop here
+//   }
+// }
+
+
+
 async function checkEmail(email) {
-  // 🔍 Step 1: Check if email exists
   const { data: existing, error: selectError } = await supabaseClient
     .from('user_emails')
     .select('*')
@@ -22,13 +43,15 @@ async function checkEmail(email) {
   if (selectError) {
     console.error('Error checking email:', selectError.message);
     alert('Error checking email');
-    return false;
+    return true; // stop the flow
   }
 
   if (existing) {
     alert('This email is already registered. Please sign in.');
-    return false; // stop here
+    return true; // stop the flow
   }
+
+  return false; // safe to continue
 }
 
 
@@ -53,7 +76,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     return;
   }
 
-  localStorage.setItem("signUpEmail", emailSignUp);
+  // localStorage.setItem("signUpEmail", emailSignUp);
 
   const notOk = await checkEmail(emailSignUp);
 
@@ -71,21 +94,37 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
 
   if (error) {
   if (error.message.includes("User already registered")) {
-    alert("You already have an account. Please log in instead.");
+    // alert("You already have an account. Please log in instead.");
   } else {
     alert("Sign up failed: " + error.message);
   }
   return;
 }
 
+
+
+// let successful = true;
+
+
+if (data.user) alert("Sign-up successful! Please check your email for confirmation.");
+
 // Extra check: if no user object is returned, treat as already registered
 if (!data.user) {
-  // alert("You already have an account. Please log in instead.");
+  // successful = false;
+  alert("You already have an account. Please log in instead.");
   return;
 } 
 
-// Otherwise, success
-alert("Sign-up successful! Please check your email for confirmation.");
+// // Otherwise, success
+
+// if (data.user && !error) 
+
+  // if(successful) 
+    
+    
+
+  
+
 signUpForm.reset();
     
   } catch (err) {
