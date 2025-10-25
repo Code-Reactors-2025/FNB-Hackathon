@@ -25,6 +25,33 @@ const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function registerEmailAfterVerification() {
+
+
+
+
 // verify.js
 const { data: { session }, error } = await supabaseClient.auth.getSessionFromUrl();
 
@@ -50,52 +77,35 @@ if (error) {
 
 
 
+  // // Step 1: Check if user is authenticated
+  // const { data: { user }, error } = await supabaseClient.auth.getUser();
 
+  // if (error || !user) {
+  //   console.warn("User not authenticated yet, waiting for verification...");
+  //   // Try again after a short delay (Supabase may take a second to load session)
+  //   setTimeout(registerEmailAfterVerification, 3000);
+  //   return;
+  // }
 
+  // // Step 2: Add email to table
+  // const email = user.email;
+  // const { error: insertError } = await supabaseClient
+  //   .from('user_emails')
+  //   .insert([{ email }]);
 
+  // if (insertError) {
+  //   if (insertError.code === "23505") {
+  //     console.log("Email already exists — skipping insert.");
+  //   } else {
+  //     console.error("Insert failed:", insertError.message);
+  //   }
+  //   return;
+  // }
 
+  // console.log("✅ Email successfully registered:", email);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// async function registerEmailAfterVerification() {
-//   // Step 1: Check if user is authenticated
-//   const { data: { user }, error } = await supabaseClient.auth.getUser();
-
-//   if (error || !user) {
-//     console.warn("User not authenticated yet, waiting for verification...");
-//     // Try again after a short delay (Supabase may take a second to load session)
-//     setTimeout(registerEmailAfterVerification, 3000);
-//     return;
-//   }
-
-//   // Step 2: Add email to table
-//   const email = user.email;
-//   const { error: insertError } = await supabaseClient
-//     .from('user_emails')
-//     .insert([{ email }]);
-
-//   if (insertError) {
-//     if (insertError.code === "23505") {
-//       console.log("Email already exists — skipping insert.");
-//     } else {
-//       console.error("Insert failed:", insertError.message);
-//     }
-//     return;
-//   }
-
-//   console.log("✅ Email successfully registered:", email);
-// }
-
-// registerEmailAfterVerification();
+registerEmailAfterVerification();
 
 
 
