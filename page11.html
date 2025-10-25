@@ -3,59 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Dashboard</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>page-11</title>
   <link rel="stylesheet" href="styles/shared.css">
   <link rel="stylesheet" href="styles/page11.css">
   <script src="scripts/page11.js" defer></script>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
   </style>
 </head>
+
 <body class="page-11">
-    <div class="container">
+  <div class="container">
+    
+<!-- Sidebar -->
+<aside class="side-nav" id="sideNav">
+  <div class="sidebar-header">
+    <i class='bx bx-menu' id="sidebarClose"></i>
+  </div>
+  <nav class="side-links">
+   <button><a href="#" class="nav-link active"><i class='bx bx-home'></i><span>Home</span></a></button>
+    <button><a href="#" class="nav-link"><i class='bx bx-search-alt-2'></i><span>Search</span></a></button>
+    <button><a href="#" class="nav-link"><i class='bx bx-cog'></i><span>Settings</span></a></button>
+  </nav>
+</aside>
 
-  <!-- ======== NAVBAR ======== -->
-  <header class="top-bar">
-    <div class="nav-left">
-      <i class='bx bx-menu'></i>
-      <span class="logo-text">My Dashboard</span>
-    </div>
-    <div class="nav-right">
-      <img src="images/profile.jpg" alt="Profile" class="profile-pic">
-    </div>
-  </header>
+<!-- Top Bar -->
+<header class="top-bar">
+  <div class="nav-left">
+    <i class='bx bx-menu' id="menuToggle"></i>
+  </div>
+  <div class="nav-right">
+    <span class="username"><strong>Shiraaz&nbsp;Dickinson</strong></span>
+    <img src="images/profile.jpg" alt="Profile" class="profile-pic" />
+  </div>
+</header>
 
-  <!-- ======== SEARCH BAR ======== -->
-  <div class="search-container">
-    <i class='bx bx-search'></i>
-    <input type="text" id="searchInput" placeholder="Search dashboard...">
+    <!-- ======== SEARCH BAR ======== -->
+    <div class="search-container">
+      <i class="bx bx-search"></i>
+      <input type="text" id="searchInput" placeholder="Search dashboard..." />
+    </div>
+
+    <!-- ======== BENTO GRID ======== -->
+    <main class="bento-grid" id="bentoGrid">
+      <div class="grid-item category color-1">
+        <div class="item-header">
+          <h3>News</h3>
+          <button class="delete-btn"><i class="bx bx-trash"></i></button>
+        </div>
+        <p>Stay updated with latest news.</p>
+      </div>
+
+      <div class="grid-item category color-2">
+        <div class="item-header">
+          <h3>Weather</h3>
+          <button class="delete-btn"><i class="bx bx-trash"></i></button>
+        </div>
+        <p>Sunny 25°C in Cape Town.</p>
+      </div>
+
+      <!-- ADD TILE -->
+      <div class="grid-item add-tile" id="addTile">
+        <i class="bx bx-plus"></i>
+        <p>Add new section</p>
+      </div>
+    </main>
   </div>
 
-  <!-- ======== BENTO GRID ======== -->
-  <main class="bento-grid" id="bentoGrid">
-    <div class="grid-item category">
-      <h3>News</h3>
-      <p>Stay updated with latest news.</p>
-      <button class="delete-btn"><i class='bx bx-trash'></i></button>
-    </div>
-    <div class="grid-item category">
-      <h3>Weather</h3>
-      <p>Sunny 25°C in Cape Town.</p>
-      <button class="delete-btn"><i class='bx bx-trash'></i></button>
-    </div>
-    <div class="grid-item add-tile" id="addTile">
-      <i class='bx bx-plus'></i>
-      <p>Add new section</p>
-    </div>
-  </main>
-
-    <!-- ======== BOTTOM NAV ======== -->
-  <nav class="bottom-nav">
-    <a href="#" class="nav-link active"><i class='bx bx-home'></i><span>Home</span></a>
-    <a href="#" class="nav-link"><i class='bx bx-search-alt-2'></i><span>Search</span></a>
-    <a href="#" class="nav-link"><i class='bx bx-cog'></i><span>Settings</span></a>
-    </nav>
   </div>
+
+  <!-- ======== SCRIPT ======== -->
+  <script src="scripts/page11.js" defer></script>
 </body>
 </html>
