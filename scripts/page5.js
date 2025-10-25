@@ -50,6 +50,27 @@ handlePostSignUp();
 
 
 
+// Handle Sign Out
+
+const signOutBtn = document.getElementById("logout");
+
+signOutBtn.addEventListener("click", async () => {
+  const { error } = await supabaseClient.auth.signOut();
+
+  if (error) {
+    console.error("Error signing out:", error.message);
+    alert("Error signing out. Please try again.")
+  } else {
+    alert("Signed out successfully!");
+    window.location.href = "https://code-reactors-2025.github.io/FNB-Hackathon/page4.html"
+  }
+})
+
+
+
+
+
+
 
 
 
