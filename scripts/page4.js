@@ -6,8 +6,8 @@ const signInForm = document.getElementById("signInForm");
 signInForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const emailSignIn = document.getElementById("signInEmail").value.trim();
-  const passwordSignIn = document.getElementById("signInPassword").value;
+  const emailSignIn = document.getElementById("emailSignIn").value.trim();
+  const passwordSignIn = document.getElementById("passwordSignIn").value;
 
   try {
     const { error } = await supabase.auth.signInWithPassword({
