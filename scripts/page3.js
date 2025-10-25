@@ -32,8 +32,7 @@ async function checkEmail(email) {
 }
 
 
-const emailSignUp = document.getElementById('emailSignUp').value.trim();
-localStorage.setItem("signUpEmail", emailSignUp);
+
 
 
 
@@ -53,6 +52,8 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     );
     return;
   }
+
+  localStorage.setItem("signUpEmail", emailSignUp);
 
   const notOk = await checkEmail(emailSignUp);
 
