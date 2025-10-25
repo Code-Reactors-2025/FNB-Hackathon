@@ -26,4 +26,6 @@ signInForm.addEventListener("submit", async (e) => {
     console.error(err);
     alert("Sign-in failed. Check console for details.")
   }
+
+  localStorage.setItem("userExists", "true");
 })

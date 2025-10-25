@@ -84,6 +84,7 @@ if (!data.user) {
 }   
 
 signUpForm.reset();
+localStorage.setItem("userExists", "true");
     
   } catch (err) {
     console.error(err);
