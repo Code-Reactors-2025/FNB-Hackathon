@@ -113,3 +113,47 @@ opacity: 0.6;
 .page-10 .next-btn.active {
 opacity: 1;
 }
+.page-10 .header {
+  position: relative;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.page-10 .back-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+.page-10 .back-arrow i {
+  font-size: 24px;
+  color: #333;
+}
+
+.page-10 .dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+/* =========================
+   RESPONSIVE STYLES
+   ========================= */
+@media (max-width: 480px) {
+    .page-10 .container {
+        padding: 30px 15px;
+    }
+}
+@media (min-width: 1024px) {
+    .page-10 .container {
+        max-width: 500px;
+    }
+}
+@media (min-width: 770px) {
+    .page-10 .container {
+        max-width: 400px;
+    }
+}

@@ -56,5 +56,11 @@
   align-items: center;
   gap: 10px;
 }
+.last-updated {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
 
 

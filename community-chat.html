@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Chat</title>
+
+  <!-- ======== STYLES ======== -->
+  <link rel="stylesheet" href="styles/shared.css" />
+  <link rel="stylesheet" href="styles/community-chat.css" />
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+    <!-- ======== SCRIPT ======== -->
+  <script src="scripts/community-chat.js" defer></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+  </style>
+</head>
+<body class="community-chat">
+    <div class="container">
+        <!-- Top Bar -->
+<header class="top-bar">
+  <div class="nav-left">
+    <i class='bx bx-menu' id="menuToggle"></i>
+  </div>
+  <div class="nav-right">
+    <span class="username">
+      <a href="page12.html"><strong>Shiraaz&nbsp;Dickinson</strong></a>
+    </span>
+    <a href="page12.html">
+      <img src="https://i.pravatar.cc/150?img=3" alt="Profile" class="profile-pic" />
+    </a>
+  </div>
+</header>
+
+        <!-- Sidebar -->
+<aside class="side-nav" id="sideNav">
+  <div class="sidebar-header">
+    <i class='bx bx-menu' id="sidebarClose"></i>
+  </div>
+  <nav class="side-links">
+   <button><a href="page11.html" class="nav-link active"><i class='bx bx-home'></i><span>Home</span></a></button>
+    <button><a href="#" class="nav-link"><i class='bx bx-search-alt-2'></i><span>Search</span></a></button>
+    <button><a href="#" class="nav-link"><i class='bx bx-cog'></i><span>Settings</span></a></button>
+  </nav>
+</aside>
+
+
+
+  <div class="chat-container">
+    <!-- Sidebar -->
+    <div class="chat-sidebar">
+      <div class="sidebar-header">Community Chats</div>
+      <div class="chat-list">
+        <div class="chat-item" onclick="openChat('Community Group', 'https://i.imgur.com/9b6X5yH.png')">
+
+          <span>Community Group</span>
+        </div>
+        <div class="chat-item" onclick="openChat('Neighborhood Watch', 'https://i.imgur.com/yXOvdOS.png')">
+          <span>Neighborhood Watch</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="chat-window">
+      <div class="chat-header">
+        <span id="chatName">Community Group</span>
+      </div>
+      <div class="messages" id="messages">
+        <div class="message received">Welcome to the community chat 👋</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button id="sendBtn">➤</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

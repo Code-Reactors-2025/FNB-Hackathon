@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Community Marketplace</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/marketplace.css" />
+  <link rel="stylesheet" href="styles/shared.css"/>
+
+  <!-- Script -->
+  <script src="scripts/marketplace.js" defer></script>
+</head>
+
+<body class="market-page">
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="side-nav" id="sideNav">
+      <div class="sidebar-header">
+        <i class='bx bx-x' id="sidebarClose"></i>
+      </div>
+      <nav class="side-links">
+        <button><a href="#" class="nav-link active"><i class='bx bx-home'></i><span>Home</span></a></button>
+        <button><a href="#" class="nav-link"><i class='bx bx-search-alt-2'></i><span>Search</span></a></button>
+        <button><a href="#" class="nav-link"><i class='bx bx-cog'></i><span>Settings</span></a></button>
+      </nav>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="nav-left">
+        <i class='bx bx-menu' id="menuToggle"></i>
+      </div>
+      <div class="nav-right">
+        <span class="username"><strong>Shiraaz&nbsp;Dickinson</strong></span>
+        <img src="https://i.pravatar.cc/150?img=3" alt="Profile" class="profile-pic" />
+      </div>
+    </header>
+
+    <!-- Marketplace Header -->
+    <header class="market-header">
+      <h1>Community Marketplace</h1>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search items..." />
+        <button id="searchBtn"><i class='bx bx-search'></i></button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <aside>
+        <h2>Categories</h2>
+        <ul id="categoryList">
+          <li class="active" data-category="all">All</li>
+          <li data-category="furniture">Furniture</li>
+          <li data-category="electronics">Electronics</li>
+          <li data-category="clothing">Clothing</li>
+          <li data-category="vehicles">Vehicles</li>
+        </ul>
+      </aside>
+
+      <section id="itemContainer"></section>
+    </main>
+
+    <button class="add-item" id="addItemBtn">+ Add New Item</button>
+
+  </div>
+</body>
+</html>

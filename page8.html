@@ -14,30 +14,29 @@
   </style>
 </head>
 <body class="page-8">
-  <div class="container">
-    <div class="header">
-      <span class="back-arrow"><a href="page7.html"><i class='bx bx-arrow-back'></i></a></span>
+    <div class="container">
+    <div class="card">
+        <div class="header">
+              <span class="back-arrow"><a href="page7.html"><i class='bx bx-arrow-back'></i></a></span>
       <span class="dots">•••</span>
     </div>
+        <h2>Personal Profile</h2>
+        <p>Upload a profile picture (optional)</p>
 
-    <h2>Personal Profile</h2>
-    <p class="paragraph">Upload a profile picture (optional)</p>
-    <div class="profile-upload">
-      <label for="profilePic" class="upload-circle">
-        <div class="profile-pic-placeholder">
-        <i class='bx bx-plus'></i>
+        <label for="fileUpload" class="upload-area" id="uploadArea">
+        <img id="preview" alt="Preview">
+        <span id="plus">+</span>
+        </label>
+        <input type="file" id="fileUpload" accept="image/*">
+
+        <button class="upload-btn" id="uploadBtn">Upload</button>
+
+        <div class="buttons">
+        <button class="skip-btn" id="skipBtn">Skip</button>
+        <button class="next-btn" id="nextBtn">Next</button>
         </div>
-        <input type="file" id="profilePic" accept="image/*" hidden />
-      </label>
-      <button class="upload-btn">Upload</button>
     </div>
 
-    <div class="action-buttons">
-  <button class="skip" id="skipBtn">Skip</button>
-  <button class="next" id="nextBtn">Next</button>
-</div>
-    </div>
-
-  
-  </body>
+    
+</body>
 </html>

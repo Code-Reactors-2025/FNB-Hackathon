@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Dashboard</title>
+  <title>Municipality Services</title>
 
   <!-- ======== STYLES ======== -->
   <link rel="stylesheet" href="styles/shared.css" />
-  <link rel="stylesheet" href="styles/page11.css" />
+  <link rel="stylesheet" href="styles/municipality.css" />
   <link
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     rel="stylesheet"
   />
-   <!-- ======== SCRIPT ======== -->
-  <script src="scripts/page11.js" type="module"></script>
+    <!-- ======== SCRIPT ======== -->
+  <script src="scripts/municipality.js" defer></script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
   </style>
 </head>
 
-<body class="page-11">
+<body class="page-13">
   <div class="container">
     
 <!-- Sidebar -->
@@ -48,42 +48,26 @@
     </a>
   </div>
 </header>
+<!---main section-->
+<section class="municipality-services">
+  <h2>municipality services</h2>
 
+<div class="service-card yellow">
+  <span>load shedding</span>
+  <i class='bx bx-bulb'></i>
+</div>
 
-    <!-- ======== SEARCH BAR ======== -->
-    <div class="search-container">
-      <i class="bx bx-search"></i>
-      <input type="text" id="searchInput" placeholder="Search dashboard..." />
-    </div>
+<div class="service-card blue">
+  <span>water shedding</span>
+  <i class='bx bx-droplet'></i>
+</div>
 
-    <!-- ======== BENTO GRID ======== -->
-    <main class="bento-grid" id="bentoGrid">
-     <a href="public.html" class="grid-item category color-1">
-  <div class="item-header">
-    <h3>Public Safety</h3>
-    <button class="delete-btn"><i class="bx bx-trash"></i></button>
-  </div>
-  <p>Stay informed about local incidents, emergency alerts, and safety tips in your area.</p>
-</a>
+<div class="service-card grey">
+  <span>road maintenance</span>
+  <i class='bx bx-map'></i>
+</div>
 
-<a href="eco-hub.html" class="grid-item category color-2">
-  <div class="item-header">
-    <h3>Eco-Hub</h3>
-    <button class="delete-btn"><i class="bx bx-trash"></i></button>
-  </div>
-  <p>Find relative jobs matching your skillset, sell goods online, and volunteer in your community</p>
-</a>
+</section>
 
-
-      <!-- ADD TILE -->
-      <div class="grid-item add-tile" id="addTile">
-        <i class="bx bx-plus"></i>
-        <p>Add new section</p>
-      </div>
-    </main>
-  </div>
-
-  </div>
-  
 </body>
 </html>

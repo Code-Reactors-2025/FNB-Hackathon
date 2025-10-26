@@ -141,7 +141,7 @@ body.page-11 {
 }
 
 #sidebarClose:hover {
-  color: #1a4db3;         /
+  color: #1a4db3;         
 }
 
 /* ==================== SEARCH BAR ==================== */
@@ -203,6 +203,15 @@ body.page-11 {
   align-items: start;
   transition: margin-bottom 0.3s ease;
 }
+.bento-grid a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.bento-grid a:hover {
+  text-decoration: none;
+}
 
 .page-11 .grid-item {
   border-radius: 15px;
@@ -213,6 +222,9 @@ body.page-11 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .page-11 .grid-item h3 {

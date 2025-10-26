@@ -1,14 +1,3 @@
- import { supabase } from "./utils/supabaseClient.js";
-import { signedIn } from "./utils/signedIn.js";
-
-(async () => {
-  const user = await signedIn();
-  if (!user) return; // redirected if not logged in
-  
-  console.log("Welcome, ", user.currentUser.email);
-})();
- 
-
  const fileUpload = document.getElementById('fileUpload');
         const preview = document.getElementById('preview');
         const plus = document.getElementById('plus');
@@ -39,13 +28,16 @@ import { signedIn } from "./utils/signedIn.js";
 
         
         skipBtn.addEventListener('click', () => {
-        window.location.href = "page9.html"; 
+        alert('Skipped! Proceeding to next page...');
+        window.location.href = ""; 
         });
 
         
         nextBtn.addEventListener('click', () => {
         if (preview.src && preview.style.display === 'block') {
+            alert('Profile picture uploaded! Proceeding to next page...');
         } else {
+            alert('Proceeding without a profile picture...');
         }
-        window.location.href = "page9.html"; 
+        window.location.href = "#"; 
         });

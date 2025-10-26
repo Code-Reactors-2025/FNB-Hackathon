@@ -19,7 +19,7 @@ async function userExists() {
 
   const currentUserID = session.user.id;
 
-  const { data: userData, error: userError } = await supabaseClient.auth.getUser();
+  const { data: userData, error: userError } = await supabase.auth.getUser();
 
   if (userError) {
     console.error("Error fetching user:", userError.message);

@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Dashboard</title>
+  <title>Eco Hub</title>
 
   <!-- ======== STYLES ======== -->
   <link rel="stylesheet" href="styles/shared.css" />
-  <link rel="stylesheet" href="styles/page11.css" />
+  <link rel="stylesheet" href="styles/eco-hub.css" />
   <link
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     rel="stylesheet"
   />
-   <!-- ======== SCRIPT ======== -->
-  <script src="scripts/page11.js" type="module"></script>
+    <!-- ======== SCRIPT ======== -->
+  <script src="scripts/eco-hub.js" defer></script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
   </style>
 </head>
 
-<body class="page-11">
+<body class="eco-hub">
   <div class="container">
     
 <!-- Sidebar -->
@@ -48,42 +48,26 @@
     </a>
   </div>
 </header>
+<!---main section-->
+<section class="municipality-services">
+  <h2>Economic Hub</h2>
 
-
-    <!-- ======== SEARCH BAR ======== -->
-    <div class="search-container">
-      <i class="bx bx-search"></i>
-      <input type="text" id="searchInput" placeholder="Search dashboard..." />
-    </div>
-
-    <!-- ======== BENTO GRID ======== -->
-    <main class="bento-grid" id="bentoGrid">
-     <a href="public.html" class="grid-item category color-1">
-  <div class="item-header">
-    <h3>Public Safety</h3>
-    <button class="delete-btn"><i class="bx bx-trash"></i></button>
-  </div>
-  <p>Stay informed about local incidents, emergency alerts, and safety tips in your area.</p>
-</a>
-
-<a href="eco-hub.html" class="grid-item category color-2">
-  <div class="item-header">
-    <h3>Eco-Hub</h3>
-    <button class="delete-btn"><i class="bx bx-trash"></i></button>
-  </div>
-  <p>Find relative jobs matching your skillset, sell goods online, and volunteer in your community</p>
-</a>
-
-
-      <!-- ADD TILE -->
-      <div class="grid-item add-tile" id="addTile">
-        <i class="bx bx-plus"></i>
-        <p>Add new section</p>
-      </div>
-    </main>
+  <div class="service-card blue">
+    <span>Skill Swap</span>
+<i class='bx  bxs-hard-hat'  ></i>   
   </div>
 
+  <div class="service-card orange">
+    <span>Marketplace</span>
+    <i class='bx  bx-shopping-bag'  ></i> 
   </div>
-  
+
+  <div class="service-card white">
+    <span>Volunteer Work</span>
+<i class='bx  bx-heart-circle'  ></i> 
+  </div>
+
+</section>
+
 </body>
 </html>

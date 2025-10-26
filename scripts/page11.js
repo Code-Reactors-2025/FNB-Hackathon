@@ -20,11 +20,31 @@ const container = document.querySelector('.container');
 
 // Predefined sections to choose from
 const predefinedSections = [
-  { title: "Fitness Tracker", desc: "Monitor your daily workouts and steps." },
-  { title: "Finance", desc: "Keep track of your expenses and savings." },
-  { title: "Reminders", desc: "Set up alerts for upcoming events or tasks." },
-  { title: "Community Feed", desc: "See posts from nearby community members." },
-  { title: "Calendar", desc: "View upcoming events at a glance." }
+  {
+    title: "Public Safety",
+    desc: "Stay informed about local incidents, emergency alerts, and safety tips in your area.",
+    link: "public.html"
+  },
+  {
+    title: "Eco Hub",
+    desc: "Find relative jobs matching your skillset, sell goods online, and volunteer in your community",
+    link: "eco-hub.html"
+  },
+  {
+    title: "Event Calendar",
+    desc: "Browse and manage upcoming community events, workshops, and public gatherings in one place.",
+    link: "events.html"
+  },
+  {
+    title: "Community Group Chat",
+    desc: "Join real-time conversations with neighbors, share updates, and build stronger local connections.",
+    link: "community-chat.html"
+  },
+  {
+    title: "Municipality Services",
+    desc: "Access city services like load shedding and water shedding alerts, road maintenance requests with ease.",
+    link: "municipality.html"
+  }
 ];
 
 // Color palette for new tiles
@@ -40,14 +60,15 @@ addTile.addEventListener('click', () => {
   if (!isNaN(index) && predefinedSections[index]) {
     const section = predefinedSections[index];
 
-    const newItem = document.createElement('div');
+    const newItem = document.createElement('a');
+    newItem.href = section.link;
     newItem.classList.add('grid-item', 'category', colors[colorIndex]);
     colorIndex = (colorIndex + 1) % colors.length;
 
     newItem.innerHTML = `
       <div class="item-header">
         <h3>${section.title}</h3>
-        <button class="delete-btn"><i class='bx bx-trash'></i></button>
+        <button class="delete-btn" onclick="event.stopPropagation(); event.preventDefault();"><i class='bx bx-trash'></i></button>
       </div>
       <p>${section.desc}</p>
     `;
@@ -60,7 +81,11 @@ addTile.addEventListener('click', () => {
 // ==================== DELETE TILE ====================
 function attachDeleteHandler(item) {
   const delBtn = item.querySelector('.delete-btn');
-  delBtn.addEventListener('click', () => item.remove());
+  delBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    item.remove();
+  });
 }
 
 // Attach delete handlers to initial tiles
@@ -68,19 +93,16 @@ document.querySelectorAll('.category').forEach(attachDeleteHandler);
 
 // ==================== SIDE NAV TOGGLE ====================
 document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menuToggle');
-  const sidebarClose = document.getElementById('sidebarClose');
-  const sideNav = document.getElementById('sideNav');
-  const container = document.querySelector('.container');
-
   menuToggle.addEventListener('click', () => {
     sideNav.classList.add('active');
     container.classList.add('sidebar-open');
   });
 
-  sidebarClose.addEventListener('click', () => {
-    sideNav.classList.remove('active');
-    container.classList.remove('sidebar-open');
-  });
+  const sidebarClose = document.getElementById('sidebarClose');
+  if (sidebarClose) {
+    sidebarClose.addEventListener('click', () => {
+      sideNav.classList.remove('active');
+      container.classList.remove('sidebar-open');
+    });
+  }
 });
-
