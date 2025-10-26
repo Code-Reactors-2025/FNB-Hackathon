@@ -1,0 +1,178 @@
+.notifations {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f6fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.container {
+  width: 400px;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: vh;
+}
+
+/* Header */
+.profile-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  color: #2575fc;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.back-btn i:hover {
+  color: #1a4db3;
+}
+
+
+.profile-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-header i {
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Profile Info */
+.profile-info {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.profile-info a{text-decoration: none;
+color: #333;}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6c63ff;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+
+.profile-details p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.profile-details span {
+  color: #666;
+}
+
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.setting-item .icon{
+    margin-right: 5px;
+    
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: .3s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background-color: #6c63ff;
+}
+
+input:checked + .slider::before {
+  transform: translateX(21px);
+}
+
+
+/*====notifications=====*/
+.notification-section {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+.notification-item i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #6c63ff;
+}
+
+.notification-item span {
+  flex: 1;
+}
+body.notifations {
+  background-color: #222;
+  color: #f5f5f5;
+}
+
+body.notifations .container {
+  background-color: #333;
+}
+
+body.notifations .slider {
+  background-color: #555;
+}
+
+body.notifations .setting-item i {
+  color: #9c8cff;
+}
