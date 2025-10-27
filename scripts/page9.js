@@ -16,17 +16,11 @@ document.getElementById("interestsAndActivities").addEventListener("submit", asy
   const next1 = document.getElementById('next1');
   const interests = document.querySelectorAll('.interest');
 
-  interests.forEach(cb => {
-  cb.addEventListener('change', () => {
-      const checked = [...interests].some(box => box.checked);
-      next1.classList.toggle('active', checked);
-      next1.disabled = !checked;
-  });
-  });
-
   if (selectedGroups.length === 0) {
     alert("Please select at least one group.");
     return;
+  } else {
+    next1.style.opacity = "1";
   }
 
   const userId = user.currentUser.id;
