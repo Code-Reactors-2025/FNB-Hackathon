@@ -63,6 +63,7 @@ async function handlePostSignUp() {
 handlePostSignUp();
 
 
-document.getElementById("community-form").addEventListener("submit", () => {
+document.getElementById("community-form").addEventListener("submit", (e) => {
+  e.preventDefault(); // stop default submit
   window.location.href = "page6.html"
 })
