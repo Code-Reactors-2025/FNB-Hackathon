@@ -54,7 +54,35 @@ for (const col of columnOrder) {
     break; // stop checking further columns
   }
 }
+
+
+// Set User Name
+  const { user_metadata } = user.currentUser;
+  const firstName = user_metadata.firstname || "";
+  const lastName = user_metadata.lastname || "";
+
+  const userNameLink = document.getElementById('userNameLink');
+  if (userNameLink) {
+    userNameLink.querySelector('strong').textContent = `${firstName} ${lastName}`;
+  }
+
+
+  // === SET AVATAR IMAGE ===
+if (profile && profile.avatar_url) {
+  const avatarImg = document.getElementById("avatarImg");
+  if (avatarImg) {
+    avatarImg.src = profile.avatar_url;
+  }
+}
+
+
 })();
+
+
+
+
+
+
 
 
 
