@@ -46,3 +46,15 @@ signOutBtn.addEventListener("click", async () => {
     window.location.href = "page4"
   }
 })
+
+
+
+
+
+
+const clearLocalStorage = document.getElementById("clearLocalStorage");
+
+clearLocalStorage.addEventListener("click", () => {
+  localStorage.removeItem("userExists");
+  alert("localStorage has been cleared");
+})
