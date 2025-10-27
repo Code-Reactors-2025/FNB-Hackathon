@@ -61,3 +61,8 @@ async function handlePostSignUp() {
 
 // Call function on page load
 handlePostSignUp();
+
+
+document.getElementById("community-form").addEventListener("submit", () => {
+  window.location.href = "page6.html"
+})
