@@ -9,7 +9,7 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
-const yesBtn = document.getElementById('yesBtn');
+    const yesBtn = document.getElementById('yesBtn');
     const noBtn = document.getElementById('noBtn');
     const extraOptions = document.getElementById('extraOptions');
     const next2 = document.getElementById('next2');
@@ -29,7 +29,9 @@ const yesBtn = document.getElementById('yesBtn');
     next2.disabled = false;
     });
 
-    contributeBoxes.forEach(cb => {
+      
+
+  contributeBoxes.forEach(cb => {
     cb.addEventListener('change', () => {
         const checked = [...contributeBoxes].some(box => box.checked);
         next2.classList.toggle('active', checked);
@@ -37,7 +39,42 @@ const yesBtn = document.getElementById('yesBtn');
     });
     });
 
-    next2.addEventListener('click', () => {
-    alert("Form complete! (Next steps go here)");
-     window.location.href = "page11.html";
-    });
+
+document.getElementById("next2").addEventListener("click", async (e) => {
+  e.preventDefault(); // prevent default form submit
+
+  const user = await signedIn();
+  if (!user) return; // redirected if not logged in
+
+  // collect all checked checkboxes
+  const checkedBoxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+  const selectedGroups = Array.from(checkedBoxes).map(cb => cb.value);
+
+  if (yesBtn.classList.contains("active") && selectedGroups.length === 0) {
+    alert("Please select at least one group.");
+    return;
+  }
+
+  const userId = user.currentUser.id;
+
+  // Save groups to the 'profiles' table (array column)
+  const { error } = await supabase
+    .from('profiles')
+    .upsert(
+      [{ id: userId, community_contributions: selectedGroups }],
+      { onConflict: 'id' }
+    );
+
+  if (error) {
+    console.error("Failed to save groups:", error.message);
+  } else {
+    console.log("✅ Groups saved:", selectedGroups);
+    // Redirect to next page
+    window.location.href = "page11.html";
+  }
+
+  
+});
+
+
+
