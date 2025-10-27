@@ -29,6 +29,15 @@ import { signedIn } from "./utils/signedIn.js";
 
   // 2. Loop through columns and apply unique logic
   // Loop through columns and handle each uniquely, stop at first missing
+
+  // Helper function to check for meaningful values
+  const hasValue = (value) =>
+    value !== null &&
+    value !== "" &&
+    value.toString().trim() !== "" &&
+    value.toString().toLowerCase() !== "null";
+
+    
 const columnOrder = [
   { name: "province", page: "page5.html" },
   { name: "groups", page: "page6.html" },
