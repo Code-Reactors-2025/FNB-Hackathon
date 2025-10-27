@@ -26,8 +26,6 @@ document.getElementById("interestsAndActivities").addEventListener("submit", asy
   if (selectedGroups.length === 0) {
     alert("Please select at least one group.");
     return;
-  } else {
-    next1.style.opacity = "1";
   }
 
   const userId = user.currentUser.id;
