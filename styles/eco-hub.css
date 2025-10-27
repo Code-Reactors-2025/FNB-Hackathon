@@ -176,6 +176,7 @@ body {
   text-transform: lowercase;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   height: 200px;
+  cursor: pointer;
 }
 
 .service-card i {
@@ -186,10 +187,12 @@ body {
 .service-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  filter: brightness(1.2);
 }
 
 .blue {
   background-color: #4114b2;
+  color: pink;
 }
 
 .orange {
@@ -197,8 +200,8 @@ body {
   color: #fff;
 }
 
-.white {
-  background-color: #f4eff3;
+.peach {
+  background-color: peachpuff;
 }
 
 @media (max-width: 600px) {
