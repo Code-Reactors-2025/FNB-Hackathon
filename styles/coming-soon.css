@@ -1,0 +1,60 @@
+body.coming-soon {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.container {
+  max-width: 500px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: #333;
+}
+
+.logo img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.message .emoji {
+  font-size: 2rem;
+}
+
+.message h1 {
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.message p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.notify-btn {
+  background-color: #2575fc;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.notify-btn i {
+  margin-right: 8px;
+}
+
+.notify-btn:hover {
+  background-color: #1a4db3;
+}
+
