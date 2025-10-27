@@ -34,7 +34,7 @@ async function handlePostSignUp() {
     console.log("User signed in automatically:", email);
 
     // Step 2: Insert email into user_emails table if not exists
-    const { error: insertError } = await supabaseClient
+    const { error: insertError } = await supabase
       .from('user_emails')
       .insert([{ email }]);
 
@@ -54,4 +54,5 @@ async function handlePostSignUp() {
 }
 
 // Call function on page load
+
 handlePostSignUp();
