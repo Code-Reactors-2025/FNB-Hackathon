@@ -179,7 +179,7 @@ body {
   cursor: pointer;
 }
 .service-card a{
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .service-card:hover {
@@ -201,4 +201,5 @@ body {
     font-size: 0.95rem;
   }
 }
+
 
