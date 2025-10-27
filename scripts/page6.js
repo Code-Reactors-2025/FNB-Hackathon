@@ -10,15 +10,18 @@ import { signedIn } from "./utils/signedIn.js";
 
 
 
+import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
 
 document.getElementById("group-form").addEventListener("submit", async (e) => {
-  e.preventDefault(); // stop default submit
+  e.preventDefault(); // prevent default form submit
 
   const user = await signedIn();
-  if (!user) return;
+  if (!user) return; // redirected if not logged in
 
-  const select = document.getElementById("group");
-  const selectedGroups = Array.from(select.selectedOptions).map(opt => opt.value);
+  // collect all checked checkboxes
+  const checkedBoxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+  const selectedGroups = Array.from(checkedBoxes).map(cb => cb.value);
 
   if (selectedGroups.length === 0) {
     alert("Please select at least one group.");
@@ -27,11 +30,11 @@ document.getElementById("group-form").addEventListener("submit", async (e) => {
 
   const userId = user.currentUser.id;
 
-  // Save groups to your 'profiles' table (as an array column)
+  // Save groups to the 'profiles' table (array column)
   const { error } = await supabase
     .from('profiles')
     .upsert(
-      [{ id: userId, groups: selectedGroups }], 
+      [{ id: userId, groups: selectedGroups }],
       { onConflict: 'id' }
     );
 
@@ -43,8 +46,3 @@ document.getElementById("group-form").addEventListener("submit", async (e) => {
     window.location.href = "page7.html";
   }
 });
-
-
-
-
-
