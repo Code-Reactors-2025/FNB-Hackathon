@@ -193,6 +193,7 @@ body.page-14 {
 .service-card i {
   font-size: 24px;
   color: #2575fc;
+  text-decoration:none;
 }
 
 @media (max-width: 600px) {
@@ -200,4 +201,5 @@ body.page-14 {
     font-size: 0.95rem;
   }
 }
+
 
