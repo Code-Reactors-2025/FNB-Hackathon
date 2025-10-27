@@ -53,7 +53,7 @@ import { signedIn } from "./utils/signedIn.js";
       // Create a unique filename
       const fileExt = selectedFile.name.split('.').pop();
       const fileName = `${userId}_${Date.now()}.${fileExt}`;
-      const filePath = `avatars/${fileName}`;
+      const filePath = `${fileName}`;
 
       // Upload to Supabase Storage (create a bucket named "avatars" first!)
       const { data: uploadData, error: uploadError } = await supabase.storage
