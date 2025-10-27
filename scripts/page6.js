@@ -10,9 +10,6 @@ import { signedIn } from "./utils/signedIn.js";
 
 
 
-import { supabase } from "./utils/supabaseClient.js";
-import { signedIn } from "./utils/signedIn.js";
-
 document.getElementById("group-form").addEventListener("submit", async (e) => {
   e.preventDefault(); // prevent default form submit
 
