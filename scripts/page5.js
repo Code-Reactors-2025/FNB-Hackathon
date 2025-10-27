@@ -42,7 +42,7 @@ async function handlePostSignUp() {
     // Step 2: Insert email into user_emails table if not exists
     const { error: insertError } = await supabase
       .from('user_emails')
-      .insert([{ email }], { onConflict: 'email' });
+      .upsert([{ email }], { onConflict: 'email' });
 
     if (insertError) {
       if (insertError.code === "23505") { // duplicate
