@@ -9,10 +9,36 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
-// // Initialize Supabase client
-// const supabaseUrl = 'https://fvvjlaedmftclupcaeph.supabase.co';
-// const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2dmpsYWVkbWZ0Y2x1cGNhZXBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEzMzU5NjIsImV4cCI6MjA3NjkxMTk2Mn0.Hxdw3BXV3DNoYUt0fY6gXdL4q-o4XnMLb7ACT4R5utQ';
-// const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+
+async function checkEmail(email) {
+  const { data: existing, error: selectError } = await supabase
+    .from('user_emails')
+    .select('*')
+    .eq('email', email)
+    .maybeSingle();
+
+  if (selectError) {
+    console.error('Error checking email:', selectError.message);
+    alert('Error checking email');
+    return true; // stop the flow
+  }
+
+  if (!existing) {
+    // alert('This email is already registered. Please sign in.');
+    // window.location.href = "https://code-reactors-2025.github.io/FNB-Hackathon/page4.html";
+    // return true; // stop the flow
+    return;
+  } 
+
+  return false; // safe to continue
+}
+
+
+
+
+
+
 
 async function handlePostSignUp() {
   try {
@@ -33,8 +59,12 @@ async function handlePostSignUp() {
     const email = session.user.email;
     console.log("User signed in automatically:", email);
 
+    const notOk = await checkEmail(email);
+
+    if (notOk) return;
+
     // Step 2: Insert email into user_emails table if not exists
-    const { error: insertError } = await supabase
+    const { error: insertError } = await supabaseClient
       .from('user_emails')
       .insert([{ email }]);
 
@@ -54,5 +84,4 @@ async function handlePostSignUp() {
 }
 
 // Call function on page load
-
 handlePostSignUp();
