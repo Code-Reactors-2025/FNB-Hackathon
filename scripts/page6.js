@@ -9,6 +9,12 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
+const page6Complete = localStorage.getItem("page6Complete");
+
+if (page6Complete === "true") {
+  window.location.href = "page11.html";
+}
+
 
 
 (async () => {
@@ -88,6 +94,7 @@ document.getElementById("group-form").addEventListener("submit", async (e) => {
   } else {
     console.log("✅ Groups saved:", selectedGroups);
     // Redirect to next page
+    localStorage.setItem("page6Complete", "true");
     window.location.href = "page7.html";
   }
 });

@@ -9,6 +9,11 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
+const page10Complete = localStorage.getItem("page10Complete");
+
+if (page10Complete === "true") {
+  window.location.href = "page11.html";
+}
 
 
 (async () => {
@@ -130,6 +135,7 @@ document.getElementById("next2").addEventListener("click", async (e) => {
   } else {
     console.log("✅ Groups saved:", selectedGroups);
     // Redirect to next page
+    localStorage.setItem("page10Complete", "true");
     window.location.href = "page11.html";
   }
 

@@ -11,6 +11,13 @@ import { signedIn } from "./utils/signedIn.js";
 
 
 
+const page8Complete = localStorage.getItem("page8Complete");
+const page9Complete = localStorage.getItem("page9Complete");
+
+if (page8Complete === "true" || page9Complete === "true") {
+  window.location.href = "page11.html"
+}
+
 
 (async () => {
   const user = await signedIn();
@@ -95,12 +102,14 @@ for (const col of columnOrder) {
 
   // Skip → go to next page
   skipBtn.addEventListener('click', () => {
+    localStorage.setItem("page8Complete", "true");
     window.location.href = "page9.html";
   });
 
   // Upload file and save URL to DB
   nextBtn.addEventListener('click', async () => {
     if (!selectedFile) {
+      localStorage.setItem("page8Complete", "true");
       window.location.href = "page9.html";
       return;
     }
@@ -144,6 +153,7 @@ for (const col of columnOrder) {
       console.log("✅ Profile picture saved:", publicUrl);
 
       // Go to next page
+      localStorage.setItem("page8Complete", "true");
       window.location.href = "page9.html";
     } catch (err) {
       console.error("❌ Error uploading profile picture:", err.message);

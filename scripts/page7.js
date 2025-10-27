@@ -9,7 +9,11 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
+const page7Complete = localStorage.getItem("page7Complete");
 
+if (page7Complete === "true") {
+  window.location.href = "page11.html"
+}
 
 
 (async () => {
@@ -92,6 +96,7 @@ const yesBtn = document.getElementById('yesBtn');
       console.log(`✅ Choice saved: ${choice}`);
       
       // Redirect to next page
+      localStorage.setItem("page7Complete", "true");
       window.location.href = "page8.html"; // adjust if needed
     }
   };
