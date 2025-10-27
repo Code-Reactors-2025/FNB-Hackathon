@@ -4,8 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skill Swap</title>
+    <link rel="stylesheet" href="styles/shared.css">
+    <link rel="stylesheet" href="styles/skillswap.css">
+    <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="fontAwesome/css/all.css">
+    <!-- <script src="scripts/skillswap.js" type="module"></script> -->
 </head>
-<body>
+
+<body class="skillswap">
+  <div class="container">
     
+<!-- Sidebar -->
+<aside class="side-nav" id="sideNav">
+  <div class="sidebar-header">
+    <i class='bx bx-menu' id="sidebarClose"></i>
+  </div>
+  <nav class="side-links">
+   <button><a href="page11.html" class="nav-link active"><i class='bx bx-home'></i><span>Home</span></a></button>
+    <button><a href="search.html" class="nav-link"><i class='bx bx-search-alt-2'></i><span>Search</span></a></button>
+    <button><a href="settings.html" class="nav-link"><i class='bx bx-cog'></i><span>Settings</span></a></button>
+  </nav>
+</aside>
+
+<!-- Top Bar -->
+<header class="top-bar">
+  <div class="nav-left">
+    <i class='bx bx-menu' id="menuToggle"></i>
+  </div>
+  <div class="nav-right">
+    <span class="username">
+      <a href="page12.html"><strong id="username"></strong></a>
+    </span>
+    <a href="page12.html">
+      <img id="avatarImg" src="images/profile.png" alt="Profile" class="profile-pic" />
+    </a>
+  </div>
+</header>
+
+<!---main section-->
+<main id="skillSwapMain">
+    <img src="images/skillswap.png" alt="Skill Swap" width="400">
+    <ul>
+        <li>Share Skills</li>
+        <li>Offer Services</li>
+        <li>Job Creation</li>
+    
+    </ul>
+    
+    <h2>Add a new discussion</h2>
+    <div id="newTopic">
+        <i class="fa-solid fa-plus"></i>
+    </div>
+    
+    <section id="newSkillsTopic">
+    <h1>Add a new Discussion Topic</h1>
+    <form id="discussionTopicForm">
+        <input type="text" id="topicTitle" placeholder="Service Rendered / Needed" required aria-required="true">
+        <textarea name="discussion" id="discussion" placeholder="Type message here..." required aria-required="true"></textarea>
+        <button id="postDiscussion" type-="submit">Post Discussion</button>
+    </form>
+</section>
+</main>
+
+
 </body>
 </html>
