@@ -9,6 +9,85 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
+
+
+
+
+
+import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return;
+
+  const userId = user.currentUser.id;
+
+  // 1. Fetch user profile
+  const { data: profile, error } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", userId)
+    .maybeSingle();
+
+  if (error) {
+    console.error("Error fetching profile:", error.message);
+    return;
+  }
+
+  // 2. Loop through columns and apply unique logic
+  for (const [column, value] of Object.entries(profile)) {
+    const hasValue = value !== null && value !== "";
+
+    switch (column) {
+      case "province":
+        if (hasValue) {
+          break;
+        } else {
+          window.location.href = "page5.html";
+        }
+        break;
+
+      case "groups":
+        if (hasValue) {
+          break;
+        } else {
+          window.location.href = "page6.html";
+        }
+        break;
+
+      case "receive_updates":
+        if (hasValue) {
+          break;
+        } else {
+          window.location.href = "page7.html";
+        }
+        break;
+
+      case "interestsandactivities":
+        if (hasValue) {
+          break;
+        } else {
+          window.location.href = "page9.html";
+        }
+        break;
+
+      case "community_contributions":
+        if (hasValue) {
+          break;
+        } else {
+          window.location.href = "page10.html";
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+})();
+
+
+
 // ==================== DASHBOARD SCRIPT ====================
 
 // Grab elements
