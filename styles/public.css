@@ -180,7 +180,9 @@ body.page-14 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-
+.sevice-card a{
+  text-decoration:none;
+}
 .service-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -193,7 +195,6 @@ body.page-14 {
 .service-card i {
   font-size: 24px;
   color: #2575fc;
-  text-decoration:none;
 }
 
 @media (max-width: 600px) {
@@ -201,5 +202,6 @@ body.page-14 {
     font-size: 0.95rem;
   }
 }
+
 
 
