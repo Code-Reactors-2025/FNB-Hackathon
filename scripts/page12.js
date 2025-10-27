@@ -56,5 +56,6 @@ const clearLocalStorage = document.getElementById("clearLocalStorage");
 
 clearLocalStorage.addEventListener("click", () => {
   localStorage.removeItem("userExists");
+  localStorage.removeItem("page5Complete")
   alert("localStorage has been cleared");
 })

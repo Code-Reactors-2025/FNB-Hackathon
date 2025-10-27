@@ -8,6 +8,12 @@ import { signedIn } from "./utils/signedIn.js";
   console.log("Welcome, ", user.currentUser.email);
 })();
 
+const page5Complete = localStorage.getItem("page5Complete");
+
+if (page5Complete === "true") {
+  window.location.href = "page11.html"
+}
+
 // Handle post-signup logic
 async function handlePostSignUp() {
   try {
@@ -103,5 +109,6 @@ document.getElementById("community-form").addEventListener("submit", async (e) =
 
   await saveUserProfile(province);
 
+  localStorage.setItem("page5Complete", "true");
   window.location.href = "page6.html";
 });
