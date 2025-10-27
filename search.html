@@ -4,8 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore</title>
+    <link rel="stylesheet" href="styles/search.css">
 </head>
 <body>
-    
+      <div class="container">
+    <h2>Search-bar</h2>
+    <input type="text" placeholder="Search..." id="searchBox">
+    <select id="category">
+      <option value="">Select Skill</option>
+      <option value="Painter">Painter</option>
+      <option value="Plumber">Plumber</option>
+      <option value="Electrician">Electrician</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Web Design">Web Design</option>
+      <option value="Mobile Development">Mobile App Development</option>
+      <option value="UI/UX">UI/UX Design</option>
+      <option value="Graphic Design">Graphic Design</option>
+      <option value="Digital Marketing">Digital Marketing</option>
+      <option value="SEO">SEO Optimization</option>
+      <option value="Copywriting">Copywriting</option>
+      <option value="Content Writing">Content Writing</option>
+      <option value="Photography">Photography</option>
+      <option value="Video Editing">Video Editing</option>
+      <option value="Social Media Marketing">Social Media Management</option>
+      <option value="Virtual Assistance">Virtual Assistance</option>
+      <option value="Data Entry">Data Entry</option>
+      <option value="Customer Support">Customer Support</option>
+      <option value="Tutoring">Tutoring / Teaching</option>
+      <option value="Translation">Translation</option>
+      <option value="Accounting">Accounting & Bookkeeping</option>
+      <option value="IT Support">IT Support</option>
+      <option value="Cybersecurity">Cybersecurity</option>
+      <option  value="3D Modeling">3D Modeling</option>
+      <option value="Animation">Animation</option>
+      <option value="Music Production">Music Production</option>
+      <option value="Voice Over">Voice Over</option>
+      <option value="Event Planning">Event Planning</option>
+      <option value="Catering">Catering</option>
+      <option value="Makeup Artist">Makeup Artist</option>
+      <option value="Hair Stylist">Hair Stylist</option>
+      <option value="Barber">Barber</option>
+      <option value="Fashion Design">Fashion Design / Tailoring</option>
+      <option value="Plumbing">Plumbing</option>
+      <option value="Electrical Work">Electrical Work</option>
+      <option value="Painting">Painting</option>
+      <option value="Construction">Construction</option>
+      <option value="Carpentry">Carpentry</option>
+      <option value="Mechanic">Mechanic</option>
+      <option value="Landscaping">Landscaping</option>
+      <option value="Cleaning Services">Cleaning Services</option>
+      <option value="Security">Security</option>
+      <option value="Delivery Driver">Delivery Driver</option>
+      <option value="Personal Trainer">Personal Trainer</option>
+      <option value="Life Coach">Life Coach</option>
+      <option value="Nutritionist">Nutritionist</option>
+      <option value="Health & Wellness">Health & Wellness</option>
+    </select>
+    <div id="results"></div>
+  </div>
+
+  <script>
+    const results = document.getElementById('results');
+    const searchBox = document.getElementById('searchBox');
+
+    searchBox.addEventListener('input', () => {
+      const query = searchBox.value.toLowerCase();
+      results.innerHTML = query
+        ? `<p>Showing results for "<b>${query}</b>"...</p>`
+        : '';
+    });
+  </script>
 </body>
 </html>
