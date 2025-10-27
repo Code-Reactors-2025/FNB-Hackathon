@@ -28,54 +28,26 @@ import { signedIn } from "./utils/signedIn.js";
   }
 
   // 2. Loop through columns and apply unique logic
-  for (const [column, value] of Object.entries(profile)) {
-    const hasValue = value !== null && value !== "";
+  // Loop through columns and handle each uniquely, stop at first missing
+const columnOrder = [
+  { name: "province", page: "page5.html" },
+  { name: "groups", page: "page6.html" },
+  { name: "receive_updates", page: "page7.html" },
+  { name: "interestsandactivities", page: "page9.html" },
+  { name: "community_contributions", page: "page10.html" }
+];
 
-    switch (column) {
-      case "province":
-        if (hasValue) {
-          break;
-        } else {
-          window.location.href = "page5.html";
-        }
-        break;
+for (const col of columnOrder) {
+  const value = profile[col.name];
 
-      case "groups":
-        if (hasValue) {
-          break;
-        } else {
-          window.location.href = "page6.html";
-        }
-        break;
-
-      case "receive_updates":
-        if (hasValue) {
-          break;
-        } else {
-          window.location.href = "page7.html";
-        }
-        break;
-
-      case "interestsandactivities":
-        if (hasValue) {
-          break;
-        } else {
-          window.location.href = "page9.html";
-        }
-        break;
-
-      case "community_contributions":
-        if (hasValue) {
-          break;
-        } else {
-          window.location.href = "page10.html";
-        }
-        break;
-
-      default:
-        break;
-    }
+  if (!hasValue(value)) {
+    window.location.href = col.page; // go to first missing page
+    break; // stop checking further columns
   }
+}
+
+
+
 })();
 
 
