@@ -1,0 +1,269 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+
+/* ===== TOP BAR ===== */
+.skillswap  .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.skillswap  .nav-left i {
+  font-size: 24px;
+  color: #2575fc;
+  cursor: pointer;
+}
+
+.skillswap  .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skillswap  .username a{
+    text-decoration: none;
+    font-size: 0.95rem;
+     color: #333;
+}
+.skillswap  .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2575fc;
+  
+}
+
+/* ===== SIDEBAR NAV ===== */
+
+.skillswap  .side-nav {
+  position: absolute; 
+  top: 0;            
+  width: max-content;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 200; 
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  scrollbar-shadow-color: 0 6px 15px rgba(0,0,0,0.1);
+
+}
+
+.skillswap  .side-nav.active {
+  display: flex;
+  transform: translateX(0);
+}
+
+.skillswap  .side-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.skillswap  .side-links button {
+   display: flex;               
+        justify-content: center;    
+        align-items: center;         
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.skillswap  .side-links .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #777;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  ;
+}
+
+.skillswap .side-links .nav-link i {
+  font-size: 1rem;
+} 
+.skillswap  .side-links .nav-link.active,
+.skillswap  .side-links .nav-link:hover {
+  color: #2575fc;
+}
+.skillswap  .container.sidebar-open .bento-grid {
+  margin-left: 150px;
+  transition: margin 0.3s ease;
+}
+.skillswap  .container.sidebar-close .bento-grid {
+  margin-right: 200px;
+  transition: margin 0.3s ease;
+}
+
+.container {
+  overflow-y: hidden;
+  min-height: 100vh;
+}
+
+#sidebarClose {
+  font-size: 28px;        
+  color: #2575fc;        
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#sidebarClose:hover {
+  color: #1a4db3;         
+}
+
+
+
+
+
+
+
+/* Main */
+
+main {
+  position: relative;
+  width: 100%;
+  padding: 1.5em 1.5em 5em;
+}
+
+img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: auto;
+  margin-bottom: 3em;
+  box-shadow: .25em .25em .125em #000,
+              -.25em .25em .125em #000;
+}
+
+
+
+
+
+ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+li {
+  /* display: flex; */
+  margin: auto;
+  margin-left: 100px;
+  font-size: 2em;
+  font-style: italic;
+}
+
+
+h2 {
+  margin: 3em 0 .5em;
+  font-size: 1.5em;
+}
+
+#newTopic {
+  display: block;
+  width: 90%;
+  margin: auto;
+  background: linear-gradient(to right, lightblue, darkcyan, powderblue);
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 2em;
+}
+
+#newTopic i {
+  padding: 0.5em;
+  font-size: 3em;
+  cursor: pointer;
+  background-color: crimson;
+  border-radius: 50%;
+
+}
+
+#newSkillsTopic {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 80vh;
+  overflow: auto;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+#newSkillsTopic h1 {
+  margin: 1em 0;
+}
+
+#newSkillsTopic form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+
+#newSkillsTopic form input,
+#newSkillsTopic form textarea {
+  width: 90%;
+  margin: auto;
+  padding: 1em;
+  border-radius: 2em;
+  resize: none;
+}
+
+#newSkillsTopic form textarea {
+  min-height: 300px;
+  height: 30vh;
+}
+
+#postDiscussion {
+  width: 50%;
+  margin: auto;
+  padding: 1em;
+  border-radius: 2em;
+  background-color: aqua;
+  color: purple;
+  border: .125em solid blue;
+  transition: all .5s;
+}
+
+#postDiscussion:is(:focus, :hover) {
+  background-color: lightblue;
+}
+
+#postDiscussion:active {
+  filter: brightness(1.3);
+}
+
+.discussion-item {
+  background-color: papayawhip;
+  margin: 3em auto;
+  border-radius: 2em;
+  border-left: .5em solid plum;
+  min-height: 6em; 
+}
