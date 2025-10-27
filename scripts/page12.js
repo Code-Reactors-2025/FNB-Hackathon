@@ -9,6 +9,77 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return; // Redirected if not logged in
+
+  const userId = user.currentUser.id;
+
+
+  // === Setting Avatar ===
+  // Fetch only the avatar_url column from the profiles table
+  const { data: profile, error } = await supabase
+    .from("profiles")
+    .select("avatar_url, province")
+    .eq("id", userId)
+    .maybeSingle();
+
+  if (error) {
+    console.error("Error fetching avatar:", error.message);
+    return;
+  }
+
+  if (profile && profile.avatar_url) {
+    const avatarImg = document.getElementById("avatarImg");
+    if (avatarImg) {
+      avatarImg.src = profile.avatar_url; // Direct URL from the table
+    }
+  }
+
+
+
+  // Setting Names
+  const { user_metadata } = user.currentUser;
+  const firstName = user_metadata.firstname || "";
+  const lastName = user_metadata.lastname || "";
+
+  const username = document.getElementById('username');
+  if (username) {
+    username.textContent = `${firstName} ${lastName}`;
+  }
+
+
+
+  // Email and phone
+  const authUser = user.currentUser;
+  const email = authUser.email;
+  const phone = authUser.user_metadata?.phone || ""; // Optional: fallback if phone not set
+
+  // Example: inject into HTML
+  const emailEl = document.getElementById("userEmail");
+  const phoneEl = document.getElementById("userPhone");
+  if (emailEl) emailEl.textContent = email;
+  if (phoneEl) phoneEl.textContent = phone;
+
+
+
+  // Location
+  const locationEl = document.getElementById("userLocation");
+  if (locationEl && profile?.province) locationEl.textContent = profile.province;
+
+})();
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const darkModeToggle = document.getElementById('darkMode');
 
