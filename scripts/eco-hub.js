@@ -1,3 +1,22 @@
+import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
+import { getUserInfo } from "./utils/getUserInfo.js";
+
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return; // redirected if not logged in
+  
+  const userInfo = await getUserInfo();
+  if (!userInfo) return;
+
+  document.getElementById("username").textContent = `${userInfo.firstname} ${userInfo.lastname}`;
+  document.getElementById("avatarImg").src = userInfo.avatar_url;
+})();
+
+
+
+
 // ==================== DASHBOARD SCRIPT ====================
 
 // Grab elements
@@ -24,3 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     container.classList.remove('sidebar-open');
   });
 });
+
+
+document.getElementById("skillSwapCard").addEventListener("click", () => {
+  window.location.href = "skillswap.html"
+})
