@@ -1,51 +1,158 @@
- import { supabase } from "./utils/supabaseClient.js";
+import { supabase } from "./utils/supabaseClient.js";
+import { signedIn } from "./utils/signedIn.js";
+
+
+
+
+
+import { supabase } from "./utils/supabaseClient.js";
 import { signedIn } from "./utils/signedIn.js";
 
 (async () => {
   const user = await signedIn();
   if (!user) return; // redirected if not logged in
-  
-  console.log("Welcome, ", user.currentUser.email);
+
+  console.log("Welcome,", user.currentUser.email);
+
+  const userId = user.currentUser.id;
+
+  const fileUpload = document.getElementById('fileUpload');
+  const preview = document.getElementById('preview');
+  const plus = document.getElementById('plus');
+  const uploadBtn = document.getElementById('uploadBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const skipBtn = document.getElementById('skipBtn');
+
+  let selectedFile = null;
+
+  // Click upload → open file selector
+  uploadBtn.addEventListener('click', () => fileUpload.click());
+
+  // When a file is selected, show preview
+  fileUpload.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      selectedFile = file;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        preview.src = event.target.result;
+        preview.style.display = 'block';
+        plus.style.display = 'none';
+        nextBtn.style.display = 'inline-block';
+        nextBtn.classList.add('glow');
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Skip → go to next page
+  skipBtn.addEventListener('click', () => {
+    window.location.href = "page9.html";
+  });
+
+  // Upload file and save URL to DB
+  nextBtn.addEventListener('click', async () => {
+    if (!selectedFile) {
+      window.location.href = "page9.html";
+      return;
+    }
+
+    try {
+      // Create a unique filename
+      const fileExt = selectedFile.name.split('.').pop();
+      const fileName = `${userId}_${Date.now()}.${fileExt}`;
+      const filePath = `avatars/${fileName}`;
+
+      // Upload to Supabase Storage (create a bucket named "avatars" first!)
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('avatars')
+        .upload(filePath, selectedFile, {
+          cacheControl: '3600',
+          upsert: true,
+        });
+
+      if (uploadError) throw uploadError;
+
+      // Get a public URL
+      const { data: publicUrlData } = supabase.storage
+        .from('avatars')
+        .getPublicUrl(filePath);
+
+      const publicUrl = publicUrlData.publicUrl;
+
+      // Save to user profile
+      const { error: updateError } = await supabase
+        .from('profiles')
+        .upsert(
+          [{ id: userId, avatar_url: publicUrl }],
+          { onConflict: 'id' }
+        );
+
+      if (updateError) throw updateError;
+
+      console.log("✅ Profile picture saved:", publicUrl);
+
+      // Go to next page
+      window.location.href = "page9.html";
+    } catch (err) {
+      console.error("❌ Error uploading profile picture:", err.message);
+      alert("Failed to upload image. Please try again.");
+    }
+  });
 })();
+
+
+
+
+
+
+
+
+// (async () => {
+//   const user = await signedIn();
+//   if (!user) return; // redirected if not logged in
+  
+//   console.log("Welcome, ", user.currentUser.email);
+// })();
  
 
- const fileUpload = document.getElementById('fileUpload');
-        const preview = document.getElementById('preview');
-        const plus = document.getElementById('plus');
-        const uploadBtn = document.getElementById('uploadBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const skipBtn = document.getElementById('skipBtn');
+//  const fileUpload = document.getElementById('fileUpload');
+//         const preview = document.getElementById('preview');
+//         const plus = document.getElementById('plus');
+//         const uploadBtn = document.getElementById('uploadBtn');
+//         const nextBtn = document.getElementById('nextBtn');
+//         const skipBtn = document.getElementById('skipBtn');
 
         
-        uploadBtn.addEventListener('click', () => fileUpload.click());
+//         uploadBtn.addEventListener('click', () => fileUpload.click());
 
         
-        fileUpload.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-            preview.src = event.target.result;
-            preview.style.display = 'block';
-            plus.style.display = 'none';
+//         fileUpload.addEventListener('change', (e) => {
+//         const file = e.target.files[0];
+//         if (file) {
+//             const reader = new FileReader();
+//             reader.onload = (event) => {
+//             preview.src = event.target.result;
+//             preview.style.display = 'block';
+//             plus.style.display = 'none';
 
             
-            nextBtn.style.display = 'inline-block'; 
-            nextBtn.classList.add('glow');
-            };
-            reader.readAsDataURL(file);
-        }
-        });
+//             nextBtn.style.display = 'inline-block'; 
+//             nextBtn.classList.add('glow');
+//             };
+//             reader.readAsDataURL(file);
+//         }
+//         });
 
         
-        skipBtn.addEventListener('click', () => {
-        window.location.href = "page9.html"; 
-        });
+//         skipBtn.addEventListener('click', () => {
+//         window.location.href = "page9.html"; 
+//         });
 
         
-        nextBtn.addEventListener('click', () => {
-        if (preview.src && preview.style.display === 'block') {
-        } else {
-        }
-        window.location.href = "page9.html"; 
-        });
+//         nextBtn.addEventListener('click', () => {
+//         if (preview.src && preview.style.display === 'block') {
+//         } else {
+//         }
+//         window.location.href = "page9.html"; 
+//         });
