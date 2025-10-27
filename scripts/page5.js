@@ -17,7 +17,7 @@ import { signedIn } from "./utils/signedIn.js";
 async function handlePostSignUp() {
   try {
     // Step 1: Get current session (after email verification)
-    const { data: { session }, error: sessionError } = await supabaseClient.auth.getSession();
+    const { data: { session }, error: sessionError } = await supabase.auth.getSession();
 
     if (sessionError) {
       console.error("Error getting session:", sessionError.message);
