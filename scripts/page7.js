@@ -9,6 +9,55 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
+
+
+
+(async () => {
+  const user = await signedIn();
+  if (!user) return;
+
+  const userId = user.currentUser.id;
+
+  // 1. Fetch user profile
+  const { data: profile, error } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", userId)
+    .maybeSingle();
+
+  if (error) {
+    console.error("Error fetching profile:", error.message);
+    return;
+  }
+
+  // 2. Loop through columns and apply unique logic
+  // Loop through columns and handle each uniquely, stop at first missing
+
+  // Helper function to check for meaningful values
+  const hasValue = (value) =>
+    value !== null &&
+    value !== "" &&
+    value.toString().trim() !== "" &&
+    value.toString().toLowerCase() !== "null";
+
+
+const columnOrder = [
+  { name: "province", page: "page5.html" },
+  { name: "groups", page: "page6.html" },
+];
+
+for (const col of columnOrder) {
+  const value = profile[col.name];
+
+  if (!hasValue(value)) {
+    window.location.href = col.page; // go to first missing page
+    break; // stop checking further columns
+  }
+}
+})();
+
+
+
 /*================ page 7 ============*/
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
@@ -41,6 +90,7 @@ const yesBtn = document.getElementById('yesBtn');
       alert("Failed to save your choice. Please try again.");
     } else {
       console.log(`✅ Choice saved: ${choice}`);
+      
       // Redirect to next page
       window.location.href = "page8.html"; // adjust if needed
     }

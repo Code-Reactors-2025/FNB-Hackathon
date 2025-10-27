@@ -37,7 +37,7 @@ import { signedIn } from "./utils/signedIn.js";
     value.toString().trim() !== "" &&
     value.toString().toLowerCase() !== "null";
 
-    
+
 const columnOrder = [
   { name: "province", page: "page5.html" },
   { name: "groups", page: "page6.html" },
@@ -54,9 +54,6 @@ for (const col of columnOrder) {
     break; // stop checking further columns
   }
 }
-
-
-
 })();
 
 
