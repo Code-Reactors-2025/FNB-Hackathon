@@ -4,8 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
+    <link rel="stylesheet" href="styles/settings.css">
+
 </head>
 <body>
+</head>
+<body>
+
+    <main>
+        <div class="section">
+            <h3>Profile Change</h3>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <button class="btn" id="saveProfileBtn">Save Profile</button>
+        </div>
+        <div class="section">
+            <h3>Preferences</h3>
+            <div class="toggle">
+                <span>Notifications</span>
+                <input type="checkbox" id="notificationsToggle" checked>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Security</h3>
+            <label for="password">Change Password</label>
+            <input type="password" id="password" placeholder="Enter new password">
+            <button class="btn" id="changePasswordBtn">Update Password</button>
+            </div>
+            <div class="section">
+            <button class="btn" id="logoutBtn" style="background:#ef4444;">Logout</button>
+        </div>
+    </main>
+    <footer>
+        <button class="nav-btn" onclick="location.href='page11.html'">
+        </button>
+        <button class="nav-btn" onclick="location.href='search.html'">
+        <button class="nav-btn active" onclick="location.href='settings.html'">
+        </button>
+        </button>
+    </footer>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const notificationsToggle = document.getElementById('notificationsToggle');
+    const saveProfileBtn = document.getElementById('saveProfileBtn');
+    const changePasswordBtn = document.getElementById('changePasswordBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
     
+    // Keep mode on reload
+    if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    darkModeToggle.checked = true;
+    }
+    // Save profile
+    saveProfileBtn.addEventListener('click', () => {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    if (name && email) {
+    localStorage.setItem('profile', JSON.stringify({ name, email }));
+    alert('Profile saved successfully!');
+    } else {
+    alert('Please fill out all fields.');
+    }
+    });
+    // Password change simulation
+    changePasswordBtn.addEventListener('click', () => {
+    const pass = document.getElementById('password').value;
+    if (pass.length < 6) {
+    alert('Password should be at least 6 characters long.');
+    } else {
+    alert('Password updated successfully!');
+    }
+    });
+    // Logout simulation
+    logoutBtn.addEventListener('click', () => {
+    alert('You have been logged out.');
+    window.location.href = 'index.html';
+    });
+</script>
 </body>
 </html>
+    
