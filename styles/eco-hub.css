@@ -7,20 +7,23 @@ body {
   padding: 0;
   min-height: 100vh;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   position: relative;
 }
-.eco-hub  main {
+
+.eco-hub main {
   flex-grow: 1;
-  padding-left: 220px; 
+  padding-left: 220px;
 }
-/* ===== TOP BAR ===== */
-.eco-hub  .top-bar {
+
+/* ==================== TOP BAR ==================== */
+.eco-hub .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,37 +35,37 @@ body {
   z-index: 100;
 }
 
-.eco-hub  .nav-left i {
+.eco-hub .nav-left i {
   font-size: 24px;
   color: #2575fc;
   cursor: pointer;
 }
 
-.eco-hub  .nav-right {
+.eco-hub .nav-right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.eco-hub  .username a{
-    text-decoration: none;
-    font-size: 0.95rem;
-     color: #333;
+.eco-hub .username a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #333;
 }
-.eco-hub  .profile-pic {
+
+.eco-hub .profile-pic {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #2575fc;
-  
 }
 
-/* ===== SIDEBAR NAV ===== */
-
-.eco-hub  .side-nav {
-  position: absolute; 
-  top: 0;            
+/* ==================== SIDEBAR NAV ==================== */
+.eco-hub .side-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: max-content;
   height: 100vh;
   background: #fff;
@@ -70,138 +73,131 @@ body {
   padding: 20px 10px;
   display: none;
   flex-direction: column;
-  z-index: 200; 
+  z-index: 200;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
-  background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
-  scrollbar-shadow-color: 0 6px 15px rgba(0,0,0,0.1);
-
 }
 
-.eco-hub  .side-nav.active {
+.eco-hub .side-nav.active {
   display: flex;
   transform: translateX(0);
 }
 
-.eco-hub  .side-links {
+.eco-hub .side-links {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.eco-hub  .side-links button {
-   display: flex;               
-        justify-content: center;    
-        align-items: center;         
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+
+.eco-hub .side-links button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.eco-hub  .side-links .nav-link {
+.eco-hub .side-links .nav-link {
   display: flex;
   align-items: center;
   gap: 10px;
   color: #777;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: color 0.3s;
-  ;
+  transition: color 0.3s ease;
 }
 
 .eco-hub .side-links .nav-link i {
   font-size: 1rem;
-} 
-.eco-hub  .side-links .nav-link.active,
-.eco-hub  .side-links .nav-link:hover {
+}
+
+.eco-hub .side-links .nav-link.active,
+.eco-hub .side-links .nav-link:hover {
   color: #2575fc;
 }
-.eco-hub  .container.sidebar-open .bento-grid {
-  margin-left: 150px;
-  transition: margin 0.3s ease;
-}
-.eco-hub  .container.sidebar-close .bento-grid {
-  margin-right: 200px;
-  transition: margin 0.3s ease;
-}
+
 #sidebarClose {
-  font-size: 28px;        
-  color: #2575fc;        
+  font-size: 28px;
+  color: #2575fc;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 #sidebarClose:hover {
-  color: #1a4db3;         /
-}
-.eco-hub  .item-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  color: #1a4db3;
 }
 
-.eco-hub  .item-header h3 {
-  margin: 0;
-  color: #2575fc;
-  font-size: 1rem;
-  font-weight: 600;
-}
-/*=======main section======*/
-/* ===== Municipality Services Section ===== */
-/* ===== Municipality Services Section ===== */
+/* ==================== MAIN SECTION ==================== */
 .municipality-services {
-  text-align: center;
   padding: 40px 20px;
   background-color: #f7f8fa;
+  text-align: center;
 }
 
 .municipality-services h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #111;
   margin-bottom: 20px;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
-  .municipality-services {
+/* ==================== SERVICE CARDS ==================== */
+.service-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  margin: 10px 0;
+  margin: 10px auto;
+  max-width: 500px;
   border-radius: 12px;
   text-decoration: none;
   color: inherit;
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-.municipality-services a{
-  text-decoration: none;
-}
 
-.municipality-services:hover {
+.service-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.municipality-services.blue    { background-color: #dbeafe; }
-.municipality-services.orange  { background-color: #fde68a; }
-.municipality-services.white   { background-color: #f9fafb; }
-
-.municipality-services i {
+.service-card i {
   font-size: 24px;
   color: #2575fc;
 }
 
+/* Color Variants */
+.service-card.blue    { background-color: #dbeafe; }
+.service-card.orange  { background-color: #fde68a; }
+.service-card.white   { background-color: #f9fafb; }
+.service-card.red     { background-color: #fee2e2; }
+.service-card.grey    { background-color: #f3f4f6; }
+.service-card.yellow  { background-color: #fff8c5; }
+
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 600px) {
   .service-card {
+    flex-direction: column;
+    align-items: flex-start;
     font-size: 0.95rem;
   }
+
+  .service-card i {
+    margin-top: 10px;
+  }
+
+  .eco-hub .top-bar {
+    padding: 8px 15px;
+  }
+
+  .eco-hub .side-nav {
+    width: 80%;
+    max-width: none;
+    border-radius: 0;
+  }
 }
-
-
-
-
