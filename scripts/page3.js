@@ -48,17 +48,19 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
   const phone = document.getElementById('phone').value.trim();
   const passwordSignUp = document.getElementById('passwordSignUp').value;
 
+  
+
+
+  const notOk = await checkEmail(emailSignUp);
+
+  if (notOk) return;
+
   if (!isValidPassword(passwordSignUp)) {
     alert(
       "Password must be at least 8 characters long, include at least one uppercase letter, one number, and one special character."
     );
     return;
   }
-
-
-  const notOk = await checkEmail(emailSignUp);
-
-  if (notOk) return;
 
   try {
     const { data, error } = await supabaseClient.auth.signUp({
