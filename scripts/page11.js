@@ -9,14 +9,6 @@ import { signedIn } from "./utils/signedIn.js";
 })();
 
 
-
-
-
-
-
-import { supabase } from "./utils/supabaseClient.js";
-import { signedIn } from "./utils/signedIn.js";
-
 (async () => {
   const user = await signedIn();
   if (!user) return;
