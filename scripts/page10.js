@@ -66,9 +66,12 @@ for (const col of columnOrder) {
     const next2 = document.getElementById('next2');
     const contributeBoxes = document.querySelectorAll('.contribute');
 
+    let userChoice = null;
+
     yesBtn.addEventListener('click', () => {
     yesBtn.classList.add('active');
     noBtn.classList.remove('active');
+    userChoice = "yes";
     extraOptions.style.display = 'block';
     });
 
@@ -77,6 +80,7 @@ for (const col of columnOrder) {
     yesBtn.classList.remove('active');
     extraOptions.style.display = 'none';
     next2.classList.add('active');
+    userChoice = "no";
     next2.disabled = false;
     });
 
@@ -95,18 +99,23 @@ document.getElementById("next2").addEventListener("click", async (e) => {
   e.preventDefault(); // prevent default form submit
 
   const user = await signedIn();
-  if (!user) return; // redirected if not logged in
-
-  // collect all checked checkboxes
-  const checkedBoxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
-  const selectedGroups = Array.from(checkedBoxes).map(cb => cb.value);
-
-  if (yesBtn.classList.contains("active") && selectedGroups.length === 0) {
-    alert("Please select at least one group.");
-    return;
-  }
+  if (!user) return; // redirected if not logged in 
 
   const userId = user.currentUser.id;
+
+  // Determine what to save
+  let selectedGroups = [];
+  if (userChoice === "yes") {
+    const checkedBoxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+    selectedGroups = Array.from(checkedBoxes).map(cb => cb.value);
+
+    if (selectedGroups.length === 0) {
+      alert("Please select at least one group.");
+      return;
+    }
+  } else if (userChoice === "no") {
+    selectedGroups = ["none"]; // save "none" if user chose no
+  }
 
   // Save groups to the 'profiles' table (array column)
   const { error } = await supabase
