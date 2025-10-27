@@ -65,12 +65,28 @@
   font-weight: 500;
 }
 
-.page-6 select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 200px; 
+form div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+form div div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1em;
+}
+
+form div div input {
+  width: 2em;
+  height: 2em;
+}
+
+form div div label {
+
+  height: 2em;
+  padding: .5em 0;
 }
 
 
