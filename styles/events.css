@@ -167,21 +167,25 @@ body .events {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 10px;
+  gap: 10px;
 }
 
 .calendar-header button {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
   background: white;
   border: none;
   border-radius: 50%;
   color: #265d7e;
   font-weight: bold;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s ease;
-    justify-content: center;
-    align-items: center;
 }
+
 
 .calendar-header button:hover {
   background-color: #ddd;
@@ -224,3 +228,41 @@ body .events {
   color: #000 !important;
   font-weight: bold;
 }
+.holiday {
+  background-color: #ff6b6b !important;
+  color: #fff !important;
+  font-weight: bold;
+  border: 1px solid #fff;
+}
+.holiday-card {
+  background: #fff;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.holiday-card h3 {
+  margin-bottom: 15px;
+  color: #2575fc;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.holiday-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.holiday-card li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.holiday-card li:last-child {
+  border-bottom: none;
+}
+
