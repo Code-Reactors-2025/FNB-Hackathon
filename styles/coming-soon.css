@@ -19,6 +19,24 @@ body.coming-soon {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   color: #333;
 }
+.back-arrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.5rem;
+  color: #2575fc;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: color 0.3s ease;
+}
+
+.back-arrow i {
+  font-size: 20px;
+}
+
+.back-arrow:hover {
+  color: #1a4db3;
+}
 
 .logo img {
   width: 120px;
