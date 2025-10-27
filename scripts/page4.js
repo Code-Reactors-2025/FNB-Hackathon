@@ -6,7 +6,7 @@ const signInForm = document.getElementById("signInForm");
 
 
 async function checkEmail(email) {
-  const { data: existing, error: selectError } = await supabaseClient
+  const { data: existing, error: selectError } = await supabase
     .from('user_emails')
     .select('*')
     .eq('email', email)
