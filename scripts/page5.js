@@ -59,11 +59,41 @@ async function handlePostSignUp() {
   }
 }
 
+// Save province to user's profile
+async function saveUserProfile(province) {
+  const { data: session } = await supabase.auth.getSession();
+  if (!session) return;
+
+  const userId = session.user.id;
+  const email = session.user.email;
+
+  const { error } = await supabase
+    .from('profiles')
+    .upsert([{ id: userId, email: email, province }]);
+
+  if (error) {
+    console.error("Failed to save profile:", error.message);
+  } else {
+    console.log("✅ User profile updated with province:", province);
+  }
+}
+
+
 // Call function on page load
 handlePostSignUp();
 
 
-document.getElementById("community-form").addEventListener("submit", (e) => {
+document.getElementById("community-form").addEventListener("submit", async (e) => {
   e.preventDefault(); // stop default submit
+
+  const province = document.getElementById("province").value;
+
+  if (!province) {
+    alert("Please select a province.");
+    return;
+  }
+
+  await saveUserProfile(province);
+
   window.location.href = "page6.html"
 })
