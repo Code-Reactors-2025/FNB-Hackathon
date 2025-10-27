@@ -19,8 +19,6 @@ import { signedIn } from "./utils/signedIn.js";
 
   let selectedFile = null;
 
-  // Click upload → open file selector
-  uploadBtn.addEventListener('click', () => fileUpload.click());
 
   // When a file is selected, show preview
   fileUpload.addEventListener('change', (e) => {
