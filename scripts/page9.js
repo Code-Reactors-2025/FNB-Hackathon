@@ -12,6 +12,18 @@ document.getElementById("interestsAndActivities").addEventListener("submit", asy
   const checkedBoxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
   const selectedGroups = Array.from(checkedBoxes).map(cb => cb.value);
 
+  
+  const next1 = document.getElementById('next1');
+  const interests = document.querySelectorAll('.interest');
+
+  interests.forEach(cb => {
+  cb.addEventListener('change', () => {
+      const checked = [...interests].some(box => box.checked);
+      next1.classList.toggle('active', checked);
+      next1.disabled = !checked;
+  });
+  });
+
   if (selectedGroups.length === 0) {
     alert("Please select at least one group.");
     return;
