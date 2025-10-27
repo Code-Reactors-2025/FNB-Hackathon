@@ -65,11 +65,13 @@ async function saveUserProfile(province) {
   if (!session) return;
 
   const userId = session.user.id;
-  const email = session.user.email;
 
   const { error } = await supabase
     .from('profiles')
-    .upsert([{ id: userId, email: email, province }]);
+    .upsert(
+      [{ id: userId, province }],
+      { onConflict: 'id' } // ensures existing row is updated
+    );
 
   if (error) {
     console.error("Failed to save profile:", error.message);
@@ -77,6 +79,7 @@ async function saveUserProfile(province) {
     console.log("✅ User profile updated with province:", province);
   }
 }
+
 
 
 // Call function on page load
