@@ -18,14 +18,10 @@ async function checkEmail(email) {
     return true; // stop the flow
   }
 
-  if (existing) {
-    alert('This email is already registered. Please sign in.');
-    window.location.href = "https://code-reactors-2025.github.io/FNB-Hackathon/page4.html";
-    return true; // stop the flow
-  } else {
+  if (!existing) {
     alert("This email is not registered. Please Sign Up instead");
-    window.location.href = "page3.html"
-  }
+    window.location.href = "page3.html";
+  } 
 
   return false; // safe to continue
 }
