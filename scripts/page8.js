@@ -65,6 +65,9 @@ import { signedIn } from "./utils/signedIn.js";
 
       if (uploadError) throw uploadError;
 
+      console.log("Current auth.uid:", user.currentUser.id);
+
+
       // Get a public URL
       const { data: publicUrlData } = supabase.storage
         .from('avatars')
