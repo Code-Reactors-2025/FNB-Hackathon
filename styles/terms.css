@@ -1,3 +1,13 @@
+
+.terms-page .container {
+      max-width: 900px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      padding: 40px 50px;
+    }
+
 .terms-page .terms-content {
   background: #fff;
   margin: 20px;
@@ -55,6 +65,31 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.terms-page .back-arrow i {
+  font-size: 24px;
+  color: #010916;
+  cursor: pointer;
+}
+
+.terms-page .logo-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #180303;
+}
+
+.terms-page .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fefefe;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 5px;
 }
 .last-updated {
   text-align: center;
