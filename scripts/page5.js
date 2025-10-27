@@ -69,7 +69,7 @@ async function saveUserProfile(province) {
   const { error } = await supabase
     .from('profiles')
     .upsert(
-      [{ id: userId, province }],
+      [{ id: userId, email, province }],
       { onConflict: 'id' } // ensures existing row is updated
     );
 
