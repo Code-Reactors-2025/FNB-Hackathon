@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
     <!-- ======== SCRIPT ======== -->
-  <script src="scripts/eco-hub.js" defer></script>
+  <script src="scripts/eco-hub.js" type="module"></script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
   </style>
@@ -41,10 +41,10 @@
   </div>
   <div class="nav-right">
     <span class="username">
-      <a href="page12.html"><strong>Shiraaz&nbsp;Dickinson</strong></a>
+      <a href="page12.html"><strong id="username"></strong></a>
     </span>
     <a href="page12.html">
-      <img src="https://i.pravatar.cc/150?img=3" alt="Profile" class="profile-pic" />
+      <img id="avatarImg" src="images/profile.png" alt="Profile" class="profile-pic" />
     </a>
   </div>
 </header>
@@ -52,7 +52,7 @@
 <section class="municipality-services">
   <h2>Economic Hub</h2>
 
-  <div class="service-card blue">
+  <div id="skillSwapCard" class="service-card blue">
     <span>Skill Swap</span>
 <i class='bx  bxs-hard-hat'  ></i>   
   </div>
@@ -62,7 +62,7 @@
     <i class='bx  bx-shopping-bag'  ></i> 
   </div>
 
-  <div class="service-card white">
+  <div class="service-card peach">
     <span>Volunteer Work</span>
 <i class='bx  bx-heart-circle'  ></i> 
   </div>
