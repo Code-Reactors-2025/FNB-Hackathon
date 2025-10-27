@@ -167,27 +167,22 @@ body  {
 }
 
 .service-card {
-  margin: 10px auto;
-  padding: 15px 20px;
-  border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 600;
-  font-size: 1.5rem;
-  text-transform: lowercase;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 200px;
-}
-
-.service-card i {
-  font-size: 1.5rem;
-  margin-right: 15px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .yellow {
@@ -203,8 +198,15 @@ body  {
   background-color: #bdbdbd;
 }
 
+
+.service-card i {
+  font-size: 24px;
+  color: #2575fc;
+}
+
 @media (max-width: 600px) {
   .service-card {
     font-size: 0.95rem;
   }
 }
+
