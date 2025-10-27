@@ -40,7 +40,7 @@ body.coming-soon {
 
 .logo img {
   width: 120px;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
 }
 
 .message .emoji {
@@ -75,4 +75,5 @@ body.coming-soon {
 .notify-btn:hover {
   background-color: #1a4db3;
 }
+
 
