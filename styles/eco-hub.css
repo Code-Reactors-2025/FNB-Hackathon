@@ -164,7 +164,7 @@ body {
   text-transform: lowercase;
 }
 
-.service-card {
+  .municipality-services {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -178,20 +178,20 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-.service-card a{
+.municipality-services a{
   text-decoration: none;
 }
 
-.service-card:hover {
+.municipality-services:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.service-card.blue    { background-color: #dbeafe; }
-.service-card.orange  { background-color: #fde68a; }
-.service-card.white   { background-color: #f9fafb; }
+.municipality-services.blue    { background-color: #dbeafe; }
+.municipality-services.orange  { background-color: #fde68a; }
+.municipality-services.white   { background-color: #f9fafb; }
 
-.service-card i {
+.municipality-services i {
   font-size: 24px;
   color: #2575fc;
 }
@@ -201,6 +201,7 @@ body {
     font-size: 0.95rem;
   }
 }
+
 
 
 
