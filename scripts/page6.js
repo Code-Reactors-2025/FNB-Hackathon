@@ -11,14 +11,36 @@ import { signedIn } from "./utils/signedIn.js";
 
 
 
-document.getElementById('group-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const group = document.getElementById('group').value;
-  if (group) {
-    alert(`You selected: ${group}`);
-    window.location.href = "page7.html";
+document.getElementById("group-form").addEventListener("submit", async (e) => {
+  e.preventDefault(); // stop default submit
+
+  const user = await signedIn();
+  if (!user) return;
+
+  const select = document.getElementById("group");
+  const selectedGroups = Array.from(select.selectedOptions).map(opt => opt.value);
+
+  if (selectedGroups.length === 0) {
+    alert("Please select at least one group.");
+    return;
+  }
+
+  const userId = user.currentUser.id;
+
+  // Save groups to your 'profiles' table (as an array column)
+  const { error } = await supabase
+    .from('profiles')
+    .upsert(
+      [{ id: userId, groups: selectedGroups }], 
+      { onConflict: 'id' }
+    );
+
+  if (error) {
+    console.error("Failed to save groups:", error.message);
   } else {
-    alert('Please select a group before proceeding.');
+    console.log("✅ Groups saved:", selectedGroups);
+    // Redirect to next page
+    window.location.href = "page7.html";
   }
 });
 
