@@ -8,3 +8,7 @@ if (userExists === "true") {
 function goNext() {
   window.location.href = "page3.html";
 }
+
+document.getElementById("goNext").addEventListener("click", () => {
+  goNext();
+})

@@ -47,3 +47,7 @@ function startApp() {
 }
 
 
+document.getElementById("startApp").addEventListener("click", () => {
+  startApp();
+})
+
