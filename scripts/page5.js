@@ -61,7 +61,7 @@ async function handlePostSignUp() {
 
 // Save province to user's profile
 async function saveUserProfile(province) {
-  const { data: session } = await supabase.auth.getSession();
+  const { data: { session } } = await supabase.auth.getSession();
   if (!session) return;
 
   const userId = session.user.id;
